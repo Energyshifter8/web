@@ -1,0 +1,304 @@
+/* ЛАБОРАТОРИЙН АЖИЛ 03 - style.css
+   Үндсэн 3 өнгө:
+   #2C3E50 - хар хөх (header, footer, гарчиг)
+   #27AE60 - ногоон (товч, онцлох хэсэг)
+   #F4F6F8 - цайвар саарал (хуудасны дэвсгэр)      */
+
+
+/* ============================================================
+   1. ГАДААД CSS - ЕРӨНХИЙ ТОХИРГОО
+   Энэ файл index.html дотор <link> тагаар холбогдсон.
+   ============================================================ */
+
+/* Бүх элементийн padding, border-ийг өргөнд нь багтаана */
+* {
+  box-sizing: border-box;
+}
+
+/* Хуудасны ерөнхий фонт, өнгө, дэвсгэр */
+body {
+  font-family: "Noto Sans", Arial, sans-serif;
+  background-color: #F4F6F8;
+  color: #2C3E50;
+  margin: 0;
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   2. CLASS СОНГОГЧ - гарчиг, оролт, товч
+   ============================================================ */
+
+/* Үндсэн гарчиг (h1) */
+.title {
+  font-size: 28px;
+  margin: 0 0 10px 0;
+}
+
+/* Хэсгийн гарчиг (h2) - зүүн талдаа ногоон зураастай */
+.section-title {
+  font-size: 22px;
+  color: #2C3E50;
+  border-left: 5px solid #27AE60;
+  padding-left: 10px;
+  margin-top: 0;
+}
+
+/* Формын тайлбар текст */
+.form-desc {
+  color: #5D6D7E;
+  font-size: 15px;
+}
+
+/* Талбарын нэр (label) */
+.form-label {
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+/* Бүх төрлийн оролтын талбар (text, email, select, textarea...) */
+.input-field {
+  width: 100%;
+  font-family: "Noto Sans", Arial, sans-serif;
+  font-size: 15px;
+  padding: 10px;
+  border: 1px solid #D5DBDB;
+  border-radius: 6px;
+  background-color: #FFFFFF;
+}
+
+/* Хулганаар сонгосон үед хүрээ нь ногоон болно */
+.input-field:focus {
+  border-color: #27AE60;
+  outline: none;
+}
+
+/* Radio, checkbox товчлуур */
+.choice {
+  margin-right: 5px;
+}
+
+/* Radio, checkbox-ийн хажуугийн бичиг */
+.choice-label {
+  margin-right: 20px;
+}
+
+/* Товчны ерөнхий хэлбэр */
+.btn {
+  font-family: "Noto Sans", Arial, sans-serif;
+  font-size: 16px;
+  color: #FFFFFF;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Илгээх товч - ногоон */
+.btn-submit {
+  background-color: #27AE60;
+}
+
+/* Хулгана дээр нь очиход өнгө нь гүнзгийрнэ */
+.btn-submit:hover {
+  background-color: #1E8449;
+}
+
+/* Цэвэрлэх товч - саарал */
+.btn-reset {
+  background-color: #95A5A6;
+}
+
+.btn-reset:hover {
+  background-color: #717D7E;
+}
+
+
+/* ============================================================
+   3. BOX MODEL - margin, padding, border, border-radius
+   ============================================================ */
+
+/* Агуулгыг голлуулж, хоёр талд нь зай үлдээв */
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 15px;
+}
+
+/* Section бүрийг цагаан "карт" хэлбэртэй болгов */
+.card {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E8E8;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+/* Форм өөрөө мөн дугуй булантай карт */
+.form-card {
+  background-color: #FAFBFC;
+  border: 1px solid #E5E8E8;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* fieldset - дотоод бүлэг бүр тусдаа карт */
+.form-group {
+  border: 1px solid #D5DBDB;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+/* legend - бүлгийн нэр */
+.group-title {
+  font-weight: bold;
+  color: #27AE60;
+  padding: 0 10px;
+}
+
+/* Талбар бүрийн хооронд амьсгалах зай */
+.form-row {
+  margin: 0 0 18px 0;
+}
+
+/* Товчнуудын мөр */
+.form-actions {
+  margin: 20px 0 0 0;
+}
+
+/* Жагсаалтыг тэгшлэх */
+.interest-list {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.interest-list li {
+  margin-bottom: 8px;
+}
+
+
+/* ============================================================
+   4. POSITION - relative / absolute жишээ
+   ============================================================ */
+
+/* Эцэг элементэд relative өгснөөр дотоод absolute нь үүнээс хэмжигдэнэ */
+.form-card {
+  position: relative;
+}
+
+/* Формын баруун дээд буланд наалдсан "Шинэ" badge */
+.form-card::before {
+  content: "Шинэ";
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background-color: #27AE60;
+  color: #FFFFFF;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+/* Товчийг tooltip-ийн тулгуур цэг болгов */
+.btn-submit {
+  position: relative;
+}
+
+/* Эхлээд нуугдсан tooltip - товчны дээр талд байрлана */
+.btn-submit::after {
+  content: "Мэдээллээ шалгаад илгээнэ үү";
+  position: absolute;
+  bottom: 115%;
+  left: 0;
+  background-color: #2C3E50;
+  color: #FFFFFF;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  visibility: hidden;
+}
+
+/* Хулганаа аваачихад tooltip харагдана */
+.btn-submit:hover::after {
+  visibility: visible;
+}
+
+
+/* ============================================================
+   5. ӨНГӨ, ФОНТ - header, nav, footer, хүснэгт
+   ============================================================ */
+
+/* Сайтын толгой хэсэг */
+.site-header {
+  background-color: #2C3E50;
+  color: #FFFFFF;
+  padding: 25px 15px;
+  text-align: center;
+}
+
+/* Цэсний жагсаалтаас сум, догол мөрийг нь авав */
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Цэсний мөрүүдийг хажуу хажуугаар нь байрлуулав */
+.nav-list li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+/* Цэсний холбоос */
+.nav-link {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+/* Хулгана дээр нь очиход ногоон дэвсгэртэй болно */
+.nav-link:hover {
+  background-color: #27AE60;
+}
+
+/* Хүснэгт - хүрээг нэгтгэж, бүтэн өргөнөөр харуулав */
+.grade-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Хүснэгтийн толгой мөр */
+.grade-table th {
+  background-color: #2C3E50;
+  color: #FFFFFF;
+  text-align: left;
+  padding: 12px;
+  border: 1px solid #2C3E50;
+}
+
+/* Хүснэгтийн нүднүүд */
+.grade-table td {
+  padding: 12px;
+  border: 1px solid #D5DBDB;
+}
+
+/* Сондгой мөрийг бага зэрэг өнгөлөв */
+.grade-table tbody tr:nth-child(odd) {
+  background-color: #F8F9F9;
+}
+
+/* Сайтын хөл хэсэг */
+.site-footer {
+  background-color: #2C3E50;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  font-size: 14px;
+}
