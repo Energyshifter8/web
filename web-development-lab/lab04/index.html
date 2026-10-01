@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!-- ЛАБОРАТОРИЙН АЖИЛ 04: Flexbox ба Grid ашиглан макет зохиов -->
+<html lang="mn">
+
+<head>
+  <!-- Монгол үсэг зөв харагдах кодчилол -->
+  <meta charset="UTF-8">
+  <!-- Гар утсанд зөв харагдах тохиргоо (responsive-д заавал хэрэгтэй) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Хөтчийн таб дээр гарах гарчиг -->
+  <title>Лаборатори 04: Flexbox ба Grid макет</title>
+
+  <!-- Google Fonts: Noto Sans нь кирилл үсэг дэмждэг -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
+
+  <!-- Гадаад CSS файлаа холбов -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ТОЛГОЙ ХЭСЭГ: лого зүүн, цэс баруун талд (Flexbox) -->
+  <header class="site-header">
+
+    <!-- Сайтын нэр буюу лого -->
+    <h1 class="logo">Веб<span class="logo-dot">Лаб</span></h1>
+
+    <!-- nav - үндсэн навигаци -->
+    <nav class="main-nav">
+      <ul class="nav-list">
+        <li><a class="nav-link" href="#">Нүүр</a></li>
+        <li><a class="nav-link" href="#">Бидний тухай</a></li>
+        <li><a class="nav-link" href="#">Үйлчилгээ</a></li>
+        <li><a class="nav-link" href="#">Сургалт</a></li>
+        <li><a class="nav-link" href="#">Холбоо барих</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <!-- ҮНДСЭН БҮТЭЦ: main ба aside-ийг Grid-ээр 2 багана болгов -->
+  <div class="layout">
+
+    <!-- main - хуудасны гол агуулга -->
+    <main>
+      <h2 class="section-title">Бидний үйлчилгээ</h2>
+
+      <!-- Картуудыг Grid-ээр 3 багана болгон байрлуулав -->
+      <div class="card-grid">
+
+        <!-- Карт 1 -->
+        <article class="card">
+          <div class="card-box box-green"></div>
+          <h3 class="card-title">Веб хөгжүүлэлт</h3>
+          <p class="card-text">HTML, CSS ашиглан орчин үеийн вэб хуудас хийж сурна.</p>
+          <a class="btn" href="#">Дэлгэрэнгүй</a>
+        </article>
+
+        <!-- Карт 2 -->
+        <article class="card">
+          <div class="card-box box-blue"></div>
+          <h3 class="card-title">График дизайн</h3>
+          <p class="card-text">Өнгө, фонт, зохиомжийн үндсэн зарчмуудыг эзэмшинэ.</p>
+          <a class="btn" href="#">Дэлгэрэнгүй</a>
+        </article>
+
+        <!-- Карт 3 -->
+        <article class="card">
+          <div class="card-box box-gray"></div>
+          <h3 class="card-title">Мобайл апп</h3>
+          <p class="card-text">Гар утасны программ хийх анхан шатны мэдлэг олгоно.</p>
+          <a class="btn" href="#">Дэлгэрэнгүй</a>
+        </article>
+
+        <!-- Карт 4 -->
+        <article class="card">
+          <div class="card-box box-blue"></div>
+          <h3 class="card-title">Өгөгдлийн сан</h3>
+          <p class="card-text">Мэдээллийг хэрхэн зөв хадгалах, хайх талаар судална.</p>
+          <a class="btn" href="#">Дэлгэрэнгүй</a>
+        </article>
+
+        <!-- Карт 5 -->
+        <article class="card">
+          <div class="card-box box-green"></div>
+          <h3 class="card-title">Сүлжээний үндэс</h3>
+          <p class="card-text">Интернэт хэрхэн ажилладаг тухай энгийнээр тайлбарлана.</p>
+          <a class="btn" href="#">Дэлгэрэнгүй</a>
+        </article>
+
+        <!-- Карт 6 -->
+        <article class="card">
+          <div class="card-box box-gray"></div>
+          <h3 class="card-title">Төслийн ажил</h3>
+          <p class="card-text">Сурсан мэдлэгээ бодит жижиг төсөл дээр хэрэгжүүлнэ.</p>
+          <a class="btn" href="#">Дэлгэрэнгүй</a>
+        </article>
+
+      </div>
+    </main>
+
+    <!-- aside - хажуугийн самбар (sidebar) -->
+    <aside class="sidebar">
+      <h2 class="section-title">Ангилал</h2>
+      <ul class="cat-list">
+        <li><a class="cat-link" href="#">HTML үндэс</a></li>
+        <li><a class="cat-link" href="#">CSS загвар</a></li>
+        <li><a class="cat-link" href="#">Flexbox</a></li>
+        <li><a class="cat-link" href="#">CSS Grid</a></li>
+        <li><a class="cat-link" href="#">Responsive дизайн</a></li>
+      </ul>
+    </aside>
+
+  </div>
+
+  <!-- ХӨЛ ХЭСЭГ: агуулгыг Flexbox-оор голлуулав -->
+  <footer class="site-footer">
+    <p>&copy; 2026 ВебЛаб. Бүх эрх хуулиар хамгаалагдсан.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,260 @@
+/* ЛАБОРАТОРИЙН АЖИЛ 04 - style.css
+   Үндсэн 3 өнгө:
+   #2C3E50 - хар хөх (header, footer, гарчиг)
+   #27AE60 - ногоон (товч, онцлох хэсэг)
+   #F4F6F8 - цайвар саарал (хуудасны дэвсгэр)      */
+
+
+/* ============================================================
+   1. ЕРӨНХИЙ ТОХИРГОО
+   ============================================================ */
+
+/* padding, border-ийг элементийн өргөнд багтаана */
+* {
+  box-sizing: border-box;
+}
+
+/* Хуудасны ерөнхий фонт, өнгө */
+body {
+  font-family: "Noto Sans", Arial, sans-serif;
+  background-color: #F4F6F8;
+  color: #2C3E50;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Хэсгийн гарчиг (h2) - зүүн талдаа ногоон зураастай */
+.section-title {
+  font-size: 22px;
+  border-left: 5px solid #27AE60;
+  padding-left: 10px;
+  margin-top: 0;
+}
+
+
+/* ============================================================
+   2. FLEXBOX - ТОЛГОЙ ХЭСЭГ БА НАВИГАЦИ
+   display: flex -> лого зүүн, цэс баруун талд байрлана
+   ============================================================ */
+
+.site-header {
+  display: flex;                    /* Flexbox асаав */
+  justify-content: space-between;   /* Хоёр захад нь түлхэв */
+  align-items: center;              /* Босоо тэнхлэгт голлуулав */
+  background-color: #2C3E50;
+  color: #FFFFFF;
+  padding: 15px 30px;
+}
+
+/* Сайтын нэр */
+.logo {
+  font-size: 24px;
+  margin: 0;
+}
+
+/* Логоны сүүлийн үгийг ногоон болгов */
+.logo-dot {
+  color: #27AE60;
+}
+
+/* Цэсний жагсаалт мөн Flexbox - мөрөөр нь зэрэгцүүлнэ */
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 10px;              /* Цэсүүдийн хоорондох зай */
+  list-style: none;       /* Сумыг нь авав */
+  margin: 0;
+  padding: 0;
+}
+
+/* Цэсний холбоос */
+.nav-link {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+
+/* Хулгана дээр нь очиход ногоон дэвсгэртэй болно */
+.nav-link:hover {
+  background-color: #27AE60;
+}
+
+
+/* ============================================================
+   3. GRID - ХУУДАСНЫ ТОМ БҮТЭЦ (main + aside)
+   3fr 1fr -> зүүн тал нь баруунаасаа 3 дахин өргөн
+   ============================================================ */
+
+.layout {
+  display: grid;                      /* Grid асаав */
+  grid-template-columns: 3fr 1fr;     /* 2 багана */
+  gap: 25px;                          /* Багануудын хоорондох зай */
+  max-width: 1100px;
+  margin: 30px auto;                  /* Хуудсыг голлуулав */
+  padding: 0 20px;
+}
+
+
+/* ============================================================
+   4. GRID - КАРТУУДЫГ 3 БАГАНА БОЛГОХ
+   repeat(3, 1fr) -> тэнцүү өргөнтэй 3 багана
+   ============================================================ */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;                /* Картуудын хоорондох зай */
+  align-items: stretch;     /* Картуудыг ижил өндөртэй болгов */
+}
+
+
+/* ============================================================
+   5. КАРТЫН ДИЗАЙН (padding, border-radius, box-shadow)
+   ============================================================ */
+
+.card {
+  display: flex;                /* Картын дотор Flexbox */
+  flex-direction: column;       /* Агуулгыг дээрээс доош өрнө */
+  align-items: flex-start;      /* Зүүн тийш нь тэгшлэв */
+  gap: 10px;                    /* Мөрүүдийн хоорондох зай */
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);   /* Зөөлөн сүүдэр */
+}
+
+/* Зургийн оронд тавьсан өнгөт хайрцаг */
+.card-box {
+  width: 100%;
+  height: 90px;
+  border-radius: 8px;
+}
+
+/* Хайрцгийн 3 өнгө */
+.box-green {
+  background-color: #27AE60;
+}
+
+.box-blue {
+  background-color: #2C3E50;
+}
+
+.box-gray {
+  background-color: #AEB6BF;
+}
+
+/* Картын гарчиг ба текст */
+.card-title {
+  font-size: 18px;
+  margin: 0;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #5D6D7E;
+  margin: 0;
+}
+
+/* "Дэлгэрэнгүй" товч */
+.btn {
+  background-color: #27AE60;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 18px;
+  border-radius: 6px;
+}
+
+/* Хулгана дээр нь очиход өнгө нь гүнзгийрнэ */
+.btn:hover {
+  background-color: #1E8449;
+}
+
+
+/* ============================================================
+   6. SIDEBAR (aside)
+   ============================================================ */
+
+.sidebar {
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  height: fit-content;      /* Агуулгынхаа хэрээр л өндөртэй болно */
+}
+
+/* Ангиллын жагсаалт */
+.cat-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cat-list li {
+  border-bottom: 1px solid #E5E8E8;
+}
+
+/* Жагсаалтын холбоос */
+.cat-link {
+  display: block;
+  color: #2C3E50;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 10px 5px;
+}
+
+.cat-link:hover {
+  color: #27AE60;
+}
+
+
+/* ============================================================
+   7. FLEXBOX - ХӨЛ ХЭСЭГ
+   Агуулгыг хэвтээ, босоо чиглэлд голлуулав
+   ============================================================ */
+
+.site-footer {
+  display: flex;
+  justify-content: center;    /* Хэвтээ тэнхлэгт голлуулав */
+  align-items: center;        /* Босоо тэнхлэгт голлуулав */
+  min-height: 70px;
+  background-color: #2C3E50;
+  color: #FFFFFF;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+
+/* ============================================================
+   8. RESPONSIVE - дэлгэц 768px-ээс жижиг үед
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+  /* Толгой хэсгийг дээрээс доош өрж, голлуулав */
+  .site-header {
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  /* Цэс багтахгүй бол дараагийн мөрөнд буух боломжтой болгов */
+  .nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* main ба aside нэг багана болж, sidebar нь доошоо орно */
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  /* Картууд мөн нэг багана болно */
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
