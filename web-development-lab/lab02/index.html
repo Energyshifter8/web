@@ -1,23 +1,17 @@
 <!DOCTYPE html>
-<!-- ЛАБОРАТОРИЙН АЖИЛ 02: Семантик HTML форм -->
 <html lang="mn">
 
 <head>
-  <!-- Монгол үсэг зөв харагдах кодчилол -->
   <meta charset="UTF-8">
-  <!-- Гар утсанд зөв харагдах тохиргоо -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Хөтчийн таб дээр гарах гарчиг -->
   <title>Лаборатори 02: Хэрэглэгчийн анкет</title>
 </head>
 
 <body>
 
-  <!-- САЙТЫН ТОЛГОЙ ХЭСЭГ -->
   <header>
     <h1>Оюутны Бүртгэлийн Портал</h1>
 
-    <!-- nav - сайтын үндсэн цэс -->
     <nav>
       <ul>
         <li><a href="#">Нүүр</a></li>
@@ -27,10 +21,8 @@
     </nav>
   </header>
 
-  <!-- main - хуудасны үндсэн агуулга, нэг удаа л бичигдэнэ -->
   <main>
 
-    <!-- article - бие даасан бүтэн агуулга (анкет) -->
     <article>
 
       <section>
@@ -40,14 +32,11 @@
           заавал бөглөх шаардлагатай.
         </p>
 
-        <!-- form - өгөгдөл илгээх маягт. Файл хавсаргадаг тул enctype тавина -->
         <form action="#" method="POST" enctype="multipart/form-data">
 
-          <!-- fieldset - холбоотой талбаруудыг нэг бүлэг болгоно -->
           <fieldset>
             <legend>Хувийн мэдээлэл</legend>
 
-            <!-- label-ийн for нь input-ийн id-тай яг таарч байх ёстой -->
             <p>
               <label for="fullname">Овог нэр *</label><br>
               <input type="text" id="fullname" name="fullname" minlength="2" required>
@@ -63,7 +52,6 @@
               <input type="password" id="password" name="password" minlength="6" required>
             </p>
 
-            <!-- pattern - зөвхөн 8 оронтой тоо зөвшөөрнө -->
             <p>
               <label for="phone">Утасны дугаар (8 орон) *</label><br>
               <input type="tel" id="phone" name="phone" pattern="[0-9]{8}" required>
@@ -74,7 +62,6 @@
               <input type="date" id="birthdate" name="birthdate" required>
             </p>
 
-            <!-- radio - name ижил байвал зөвхөн нэгийг нь сонгоно -->
             <p>
               Хүйс:<br>
               <input type="radio" id="male" name="gender" value="male">
@@ -88,7 +75,6 @@
           <fieldset>
             <legend>Боловсрол ба Сонирхол</legend>
 
-            <!-- select - жагсаалтаас нэгийг сонгох -->
             <p>
               <label for="level">Суралцаж буй түвшин *</label><br>
               <select id="level" name="level" required>
@@ -99,7 +85,6 @@
               </select>
             </p>
 
-            <!-- checkbox - хэд хэдийг зэрэг сонгож болно -->
             <p>
               Сонирхох технологи:<br>
               <input type="checkbox" id="tech-html" name="tech" value="html-css">
@@ -110,13 +95,11 @@
               <label for="tech-php">PHP</label>
             </p>
 
-            <!-- accept="image/*" - зөвхөн зургийн файл сонгуулна -->
             <p>
               <label for="photo">Профайл зураг</label><br>
               <input type="file" id="photo" name="photo" accept="image/*">
             </p>
 
-            <!-- textarea - олон мөр бичих талбар -->
             <p>
               <label for="about">Өөрийн тухай</label><br>
               <textarea id="about" name="about" rows="5" cols="40"></textarea>
@@ -124,7 +107,6 @@
 
           </fieldset>
 
-          <!-- submit - өгөгдлийг илгээнэ, reset - маягтыг цэвэрлэнэ -->
           <p>
             <button type="submit">Анкет Илгээх</button>
             <button type="reset">Дахин эхлүүлэх</button>
@@ -135,7 +117,6 @@
 
     </article>
 
-    <!-- Анкетаас тусдаа сэдэвтэй хэсэг -->
     <section>
       <h2>Миний сонирхол</h2>
       <ul>
@@ -145,13 +126,10 @@
       </ul>
     </section>
 
-    <!-- Хүснэгт бүхий хэсэг -->
     <section>
       <h2>Миний дүн</h2>
 
-      <!-- table - мөр баганатай өгөгдөл харуулна -->
       <table border="1">
-        <!-- thead - хүснэгтийн толгой хэсэг -->
         <thead>
           <tr>
             <th>Хичээлийн нэр</th>
@@ -159,7 +137,6 @@
             <th>Үнэлгээ</th>
           </tr>
         </thead>
-        <!-- tbody - хүснэгтийн үндсэн өгөгдөл -->
         <tbody>
           <tr>
             <td>Вэб программчлал</td>
@@ -182,7 +159,6 @@
 
   </main>
 
-  <!-- САЙТЫН ХӨЛ ХЭСЭГ -->
   <footer>
     <p>&copy; 2026 Оюутны Бүртгэлийн Портал. Бүх эрх хуулиар хамгаалагдсан.</p>
   </footer>

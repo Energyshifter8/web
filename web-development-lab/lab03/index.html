@@ -1,31 +1,23 @@
 <!DOCTYPE html>
-<!-- ЛАБОРАТОРИЙН АЖИЛ 03: Лаб 02-ын анкетыг гадаад CSS-ээр загварчлав -->
 <html lang="mn">
 
 <head>
-  <!-- Монгол үсэг зөв харагдах кодчилол -->
   <meta charset="UTF-8">
-  <!-- Гар утсанд зөв харагдах тохиргоо -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Хөтчийн таб дээр гарах гарчиг -->
   <title>Лаборатори 03: Хэрэглэгчийн анкет</title>
 
-  <!-- Google Fonts: Noto Sans нь кирилл үсэг дэмждэг -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
 
-  <!-- Гадаад CSS файлаа холбов -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <!-- САЙТЫН ТОЛГОЙ ХЭСЭГ -->
   <header class="site-header">
     <h1 class="title">Оюутны Бүртгэлийн Портал</h1>
 
-    <!-- nav - сайтын үндсэн цэс -->
     <nav class="main-nav">
       <ul class="nav-list">
         <li><a class="nav-link" href="#">Нүүр</a></li>
@@ -35,10 +27,8 @@
     </nav>
   </header>
 
-  <!-- main - хуудасны үндсэн агуулга, нэг удаа л бичигдэнэ -->
   <main class="container">
 
-    <!-- article - бие даасан бүтэн агуулга (анкет) -->
     <article>
 
       <section class="card">
@@ -48,14 +38,11 @@
           заавал бөглөх шаардлагатай.
         </p>
 
-        <!-- form - өгөгдөл илгээх маягт. Файл хавсаргадаг тул enctype тавина -->
         <form class="form-card" action="#" method="POST" enctype="multipart/form-data">
 
-          <!-- fieldset - холбоотой талбаруудыг нэг бүлэг болгоно -->
           <fieldset class="form-group">
             <legend class="group-title">Хувийн мэдээлэл</legend>
 
-            <!-- label-ийн for нь input-ийн id-тай яг таарч байх ёстой -->
             <p class="form-row">
               <label class="form-label" for="fullname">Овог нэр *</label><br>
               <input class="input-field" type="text" id="fullname" name="fullname" minlength="2" required>
@@ -71,7 +58,6 @@
               <input class="input-field" type="password" id="password" name="password" minlength="6" required>
             </p>
 
-            <!-- pattern - зөвхөн 8 оронтой тоо зөвшөөрнө -->
             <p class="form-row">
               <label class="form-label" for="phone">Утасны дугаар (8 орон) *</label><br>
               <input class="input-field" type="tel" id="phone" name="phone" pattern="[0-9]{8}" required>
@@ -82,7 +68,6 @@
               <input class="input-field" type="date" id="birthdate" name="birthdate" required>
             </p>
 
-            <!-- radio - name ижил байвал зөвхөн нэгийг нь сонгоно -->
             <p class="form-row">
               <span class="form-label">Хүйс:</span><br>
               <input class="choice" type="radio" id="male" name="gender" value="male">
@@ -96,7 +81,6 @@
           <fieldset class="form-group">
             <legend class="group-title">Боловсрол ба Сонирхол</legend>
 
-            <!-- select - жагсаалтаас нэгийг сонгох -->
             <p class="form-row">
               <label class="form-label" for="level">Суралцаж буй түвшин *</label><br>
               <select class="input-field" id="level" name="level" required>
@@ -107,7 +91,6 @@
               </select>
             </p>
 
-            <!-- checkbox - хэд хэдийг зэрэг сонгож болно -->
             <p class="form-row">
               <span class="form-label">Сонирхох технологи:</span><br>
               <input class="choice" type="checkbox" id="tech-html" name="tech" value="html-css">
@@ -118,13 +101,11 @@
               <label class="choice-label" for="tech-php">PHP</label>
             </p>
 
-            <!-- accept="image/*" - зөвхөн зургийн файл сонгуулна -->
             <p class="form-row">
               <label class="form-label" for="photo">Профайл зураг</label><br>
               <input class="input-field" type="file" id="photo" name="photo" accept="image/*">
             </p>
 
-            <!-- textarea - олон мөр бичих талбар -->
             <p class="form-row">
               <label class="form-label" for="about">Өөрийн тухай</label><br>
               <textarea class="input-field" id="about" name="about" rows="5"></textarea>
@@ -132,7 +113,6 @@
 
           </fieldset>
 
-          <!-- submit - өгөгдлийг илгээнэ, reset - маягтыг цэвэрлэнэ -->
           <p class="form-actions">
             <button class="btn btn-submit" type="submit">Анкет Илгээх</button>
             <button class="btn btn-reset" type="reset">Дахин эхлүүлэх</button>
@@ -143,7 +123,6 @@
 
     </article>
 
-    <!-- Анкетаас тусдаа сэдэвтэй хэсэг -->
     <section class="card">
       <h2 class="section-title">Миний сонирхол</h2>
       <ul class="interest-list">
@@ -153,13 +132,10 @@
       </ul>
     </section>
 
-    <!-- Хүснэгт бүхий хэсэг -->
     <section class="card">
       <h2 class="section-title">Миний дүн</h2>
 
-      <!-- table - мөр баганатай өгөгдөл харуулна. Хүрээг CSS-ээр өгнө -->
       <table class="grade-table">
-        <!-- thead - хүснэгтийн толгой хэсэг -->
         <thead>
           <tr>
             <th>Хичээлийн нэр</th>
@@ -167,7 +143,6 @@
             <th>Үнэлгээ</th>
           </tr>
         </thead>
-        <!-- tbody - хүснэгтийн үндсэн өгөгдөл -->
         <tbody>
           <tr>
             <td>Вэб программчлал</td>
@@ -190,7 +165,6 @@
 
   </main>
 
-  <!-- САЙТЫН ХӨЛ ХЭСЭГ -->
   <footer class="site-footer">
     <p>&copy; 2026 Оюутны Бүртгэлийн Портал. Бүх эрх хуулиар хамгаалагдсан.</p>
   </footer>
