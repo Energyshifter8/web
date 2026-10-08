@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="mn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лаборатори 03: Хэрэглэгчийн анкет</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <h1 class="title">Оюутны Бүртгэлийн Портал</h1>
+
+    <nav class="main-nav">
+      <ul class="nav-list">
+        <li><a class="nav-link" href="#">Нүүр</a></li>
+        <li><a class="nav-link" href="#">Анкет засах</a></li>
+        <li><a class="nav-link" href="#">Тусламж</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <article>
+
+      <section class="card">
+        <h2 class="section-title">Хэрэглэгчийн Анкет Бөглөх</h2>
+        <p class="form-desc">
+          Доорх маягтыг үнэн зөв бөглөнө үү. Одоор (*) тэмдэглэсэн талбаруудыг
+          заавал бөглөх шаардлагатай.
+        </p>
+
+        <form class="form-card" action="#" method="POST" enctype="multipart/form-data">
+
+          <fieldset class="form-group">
+            <legend class="group-title">Хувийн мэдээлэл</legend>
+
+            <p class="form-row">
+              <label class="form-label" for="fullname">Овог нэр *</label><br>
+              <input class="input-field" type="text" id="fullname" name="fullname" minlength="2" required>
+            </p>
+
+            <p class="form-row">
+              <label class="form-label" for="email">Цахим шуудан *</label><br>
+              <input class="input-field" type="email" id="email" name="email" required>
+            </p>
+
+            <p class="form-row">
+              <label class="form-label" for="password">Нууц үг *</label><br>
+              <input class="input-field" type="password" id="password" name="password" minlength="6" required>
+            </p>
+
+            <p class="form-row">
+              <label class="form-label" for="phone">Утасны дугаар (8 орон) *</label><br>
+              <input class="input-field" type="tel" id="phone" name="phone" pattern="[0-9]{8}" required>
+            </p>
+
+            <p class="form-row">
+              <label class="form-label" for="birthdate">Төрсөн огноо *</label><br>
+              <input class="input-field" type="date" id="birthdate" name="birthdate" required>
+            </p>
+
+            <p class="form-row">
+              <span class="form-label">Хүйс:</span><br>
+              <input class="choice" type="radio" id="male" name="gender" value="male">
+              <label class="choice-label" for="male">Эрэгтэй</label>
+              <input class="choice" type="radio" id="female" name="gender" value="female">
+              <label class="choice-label" for="female">Эмэгтэй</label>
+            </p>
+
+          </fieldset>
+
+          <fieldset class="form-group">
+            <legend class="group-title">Боловсрол ба Сонирхол</legend>
+
+            <p class="form-row">
+              <label class="form-label" for="level">Суралцаж буй түвшин *</label><br>
+              <select class="input-field" id="level" name="level" required>
+                <option value="">-- Сонгоно уу --</option>
+                <option value="bachelor">Бакалавр</option>
+                <option value="master">Магистр</option>
+                <option value="phd">Докторант</option>
+              </select>
+            </p>
+
+            <p class="form-row">
+              <span class="form-label">Сонирхох технологи:</span><br>
+              <input class="choice" type="checkbox" id="tech-html" name="tech" value="html-css">
+              <label class="choice-label" for="tech-html">HTML/CSS</label><br>
+              <input class="choice" type="checkbox" id="tech-js" name="tech" value="javascript">
+              <label class="choice-label" for="tech-js">JavaScript</label><br>
+              <input class="choice" type="checkbox" id="tech-php" name="tech" value="php">
+              <label class="choice-label" for="tech-php">PHP</label>
+            </p>
+
+            <p class="form-row">
+              <label class="form-label" for="photo">Профайл зураг</label><br>
+              <input class="input-field" type="file" id="photo" name="photo" accept="image/*">
+            </p>
+
+            <p class="form-row">
+              <label class="form-label" for="about">Өөрийн тухай</label><br>
+              <textarea class="input-field" id="about" name="about" rows="5"></textarea>
+            </p>
+
+          </fieldset>
+
+          <p class="form-actions">
+            <button class="btn btn-submit" type="submit">Анкет Илгээх</button>
+            <button class="btn btn-reset" type="reset">Дахин эхлүүлэх</button>
+          </p>
+
+        </form>
+      </section>
+
+    </article>
+
+    <section class="card">
+      <h2 class="section-title">Миний сонирхол</h2>
+      <ul class="interest-list">
+        <li>Вэб хөгжүүлэлт сурах</li>
+        <li>Ном унших</li>
+        <li>Сагсан бөмбөг тоглох</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">Миний дүн</h2>
+
+      <table class="grade-table">
+        <thead>
+          <tr>
+            <th>Хичээлийн нэр</th>
+            <th>Кредит</th>
+            <th>Үнэлгээ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Вэб программчлал</td>
+            <td>3</td>
+            <td>A</td>
+          </tr>
+          <tr>
+            <td>Математик</td>
+            <td>4</td>
+            <td>B</td>
+          </tr>
+          <tr>
+            <td>Англи хэл</td>
+            <td>2</td>
+            <td>A</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <p><a href="../lab04/index.html">← Нүүр хуудас руу буцах</a></p>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Оюутны Бүртгэлийн Портал. Бүх эрх хуулиар хамгаалагдсан.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="mn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лаборатори 03: Анкет формын загварчлал</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <h1 class="site-name">Оюутны Бүртгэлийн Портал</h1>
+
+    <nav>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="index.html">Нүүр</a></li>
+        <li><a class="nav-link" href="#">Анкет засах</a></li>
+        <li><a class="nav-link" href="#">Тусламж</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="form-page">
+
+    <article class="panel">
+
+      <section>
+        <h2 class="form-title">Хэрэглэгчийн Анкет Бөглөх</h2>
+        <p class="form-text">
+          Доорх маягтыг үнэн зөв бөглөнө үү. Одоор (*) тэмдэглэсэн талбаруудыг
+          заавал бөглөх шаардлагатай.
+        </p>
+
+        <form action="#" method="POST" enctype="multipart/form-data">
+
+          <fieldset class="form-group">
+            <legend class="form-legend">Хувийн мэдээлэл</legend>
+
+            <p class="form-row">
+              <label class="form-label" for="fullname">Овог нэр *</label><br>
+              <input class="form-input" type="text" id="fullname" name="fullname" minlength="2" required>
+            </p>
+
+            <p class="form-row">
+              <label class="form-label" for="email">Цахим шуудан *</label><br>
+              <input class="form-input" type="email" id="email" name="email" required>
+            </p>
+
+            <p class="form-row">
+              <label class="form-label" for="password">Нууц үг *</label><br>
+              <input class="form-input" type="password" id="password" name="password" minlength="6" required>
+            </p>
+
+            <p class="form-row">
+              <label class="form-label" for="phone">Утасны дугаар (8 орон) *</label><br>
+              <input class="form-input" type="tel" id="phone" name="phone" pattern="[0-9]{8}" required>
+            </p>
+
+            <p class="form-row">
+              <label class="form-label" for="birthdate">Төрсөн огноо *</label><br>
+              <input class="form-input" type="date" id="birthdate" name="birthdate" required>
+            </p>
+
+            <p class="form-row">
+              Хүйс:<br>
+              <input type="radio" id="male" name="gender" value="male">
+              <label class="form-option" for="male">Эрэгтэй</label>
+              <input type="radio" id="female" name="gender" value="female">
+              <label class="form-option" for="female">Эмэгтэй</label>
+            </p>
+
+          </fieldset>
+
+          <fieldset class="form-group">
+            <legend class="form-legend">Боловсрол ба Сонирхол</legend>
+
+            <p class="form-row">
+              <label class="form-label" for="level">Суралцаж буй түвшин *</label><br>
+              <select class="form-input" id="level" name="level" required>
+                <option value="">-- Сонгоно уу --</option>
+                <option value="bachelor">Бакалавр</option>
+                <option value="master">Магистр</option>
+                <option value="phd">Докторант</option>
+              </select>
+            </p>
+
+            <p class="form-row">
+              Сонирхох технологи:<br>
+              <input type="checkbox" id="tech-html" name="tech" value="html-css">
+              <label class="form-option" for="tech-html">HTML/CSS</label><br>
+              <input type="checkbox" id="tech-js" name="tech" value="javascript">
+              <label class="form-option" for="tech-js">JavaScript</label><br>
+              <input type="checkbox" id="tech-php" name="tech" value="php">
+              <label class="form-option" for="tech-php">PHP</label>
+            </p>
+
+            <p class="form-row">
+              <label class="form-label" for="photo">Профайл зураг</label><br>
+              <input class="form-input" type="file" id="photo" name="photo" accept="image/*">
+            </p>
+
+            <p class="form-row">
+              <label class="form-label" for="about">Өөрийн тухай</label><br>
+              <textarea class="form-input" id="about" name="about" rows="5" cols="40"></textarea>
+            </p>
+
+          </fieldset>
+
+          <p>
+            <button class="btn btn-submit" type="submit">Анкет Илгээх</button>
+            <button class="btn btn-reset" type="reset">Дахин эхлүүлэх</button>
+          </p>
+
+        </form>
+      </section>
+
+    </article>
+
+    <section class="panel">
+      <h2 class="section-title">Миний сонирхол</h2>
+      <ul>
+        <li>Вэб хөгжүүлэлт сурах</li>
+        <li>Ном унших</li>
+        <li>Сагсан бөмбөг тоглох</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2 class="section-title">Миний дүн</h2>
+
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Хичээлийн нэр</th>
+            <th>Кредит</th>
+            <th>Үнэлгээ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Вэб программчлал</td>
+            <td>3</td>
+            <td>A</td>
+          </tr>
+          <tr>
+            <td>Математик</td>
+            <td>4</td>
+            <td>B</td>
+          </tr>
+          <tr>
+            <td>Англи хэл</td>
+            <td>2</td>
+            <td>A</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Оюутны Бүртгэлийн Портал. Бүх эрх хуулиар хамгаалагдсан.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,14 +1,211 @@
+/* =========================================================
+   ЛАБ 3: АНКЕТ ФОРМЫН ЗАГВАР (form.html)
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   1. CSS ФАЙЛЫГ ХОЛБОХ
+   form.html болон index.html-ийн <head> дотор
+   <link rel="stylesheet" href="css/style.css">
+   гэж энэ гадаад (external) файлыг холбосон.
+   Inline style болон <style> таг ашиглаагүй.
+   --------------------------------------------------------- */
+
+
+/* ---------------------------------------------------------
+   2. CLASS СОНГОГЧ — гарчиг, талбар, товч
+   HTML-ийн бүтцийг өөрчлөөгүй, зөвхөн class нэмсэн.
+   Class сонгогч цэгээр (.) эхэлнэ.
+   --------------------------------------------------------- */
+
+/* Гарчиг */
+.form-title {
+  font-size: 24px;
+  color: var(--color-accent);
+}
+
+.form-legend {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--color-accent);
+}
+
+.form-text {
+  font-size: 14px;
+}
+
+/* Талбар */
+.form-row {
+  font-weight: bold;
+}
+
+.form-option {
+  font-weight: normal;
+}
+
+.form-input {
+  width: 100%;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--color-main);
+  background-color: #FFFFFF;
+}
+
+/* Товч */
+.btn {
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-submit {
+  color: #FFFFFF;
+  background-color: var(--color-accent);
+}
+
+.btn-reset {
+  color: var(--color-main);
+  background-color: #FFFFFF;
+}
+
+
+/* ---------------------------------------------------------
+   3. BOX MODEL — талбаруудыг "амьсгалуулах"
+   padding       — элементийн доторх зай
+   border        — хүрээ
+   border-radius — булангийн бөөрөнхий
+   margin        — элементийн гаднах зай
+   box-sizing: border-box — padding, border нь width-д
+   багтана, тиймээс width: 100% талбар хэтэрч гарахгүй.
+   --------------------------------------------------------- */
+
 * {
   box-sizing: border-box;
 }
 
+.form-page {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.panel {
+  margin-bottom: 20px;
+  padding: 30px;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E8E8;
+  border-radius: 8px;
+}
+
+.form-title {
+  margin: 0 0 10px 0;
+}
+
+.form-text {
+  margin: 0 0 20px 0;
+}
+
+.form-group {
+  margin: 0 0 20px 0;
+  padding: 20px;
+  border: 1px solid #E5E8E8;
+  border-radius: 8px;
+}
+
+.form-legend {
+  padding: 0 8px;
+}
+
+.form-row {
+  margin: 0 0 16px 0;
+}
+
+.form-label {
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.form-input {
+  padding: 10px 12px;
+  border: 1px solid #BDC3C7;
+  border-radius: 6px;
+}
+
+.btn {
+  margin-right: 10px;
+  padding: 10px 24px;
+  border: 2px solid var(--color-accent);
+  border-radius: 6px;
+}
+
+.btn-reset {
+  border-color: var(--color-main);
+}
+
+
+/* ---------------------------------------------------------
+   4. POSITION: RELATIVE / ABSOLUTE — товч дээрх tooltip
+   Товч нь relative — tooltip-ийн байрлалыг хэмжих "эцэг".
+   ::after нь HTML-д таг нэмэлгүйгээр CSS-ээр жижиг
+   элемент нэмнэ. Түүнийг absolute болгож товчны дээд
+   талд байрлуулсан. Хулгана товч дээр очиход (:hover)
+   л харагдана.
+   --------------------------------------------------------- */
+
+.btn-submit {
+  position: relative;
+}
+
+.btn-submit::after {
+  content: "Одтой (*) талбаруудаа бөглөсөн эсэхээ шалгаарай";
+  position: absolute;
+  top: -40px;
+  left: 0;
+  display: none;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: normal;
+  color: #FFFFFF;
+  white-space: nowrap;
+  background-color: var(--color-main);
+  border-radius: 6px;
+}
+
+.btn-submit:hover::after {
+  display: block;
+}
+
+
+/* ---------------------------------------------------------
+   5. ФОНТ БА ӨНГӨ — бүх сайтад нэг хэв маяг
+   Фонт: Google Fonts-ийн "Noto Sans" нь кирилл (Ө, Ү)
+   үсэг дэмждэг. HTML-ийн <head> дотор <link>-ээр оруулсан.
+   Үндсэн 3 өнгийг хувьсагч болгож, файл даяар var()-аар
+   ашигласан:
+   --color-main   — хар хөх: толгой, хөл, текст
+   --color-accent — ногоон: гарчиг, товч
+   --color-bg     — цайвар саарал: хуудасны дэвсгэр
+   --------------------------------------------------------- */
+
+:root {
+  --color-main: #2C3E50;
+  --color-accent: #27AE60;
+  --color-bg: #F4F6F8;
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Noto Sans", Arial, sans-serif;
   line-height: 1.6;
-  color: #2C3E50;
-  background-color: #F4F6F8;
+  color: var(--color-main);
+  background-color: var(--color-bg);
 }
+
+
+/* =========================================================
+   ЛАБ 4: FLEXBOX БА GRID (index.html)
+   Толгой, цэс, хөл хэсгийг form.html бас ашигладаг.
+   ========================================================= */
 
 .site-header {
   display: flex;
@@ -16,7 +213,7 @@ body {
   align-items: center;
   padding: 15px 30px;
   color: #FFFFFF;
-  background-color: #2C3E50;
+  background-color: var(--color-main);
 }
 
 .site-name {
@@ -53,7 +250,7 @@ body {
   margin: 0 0 15px 0;
   padding-left: 10px;
   font-size: 20px;
-  border-left: 5px solid #27AE60;
+  border-left: 5px solid var(--color-accent);
 }
 
 .card-grid {
@@ -72,12 +269,28 @@ body {
 .card-title {
   margin: 0 0 8px 0;
   font-size: 17px;
-  color: #27AE60;
+  color: var(--color-accent);
 }
 
 .card-text {
   margin: 0;
   font-size: 14px;
+}
+
+.card-button {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 18px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: var(--color-accent);
+  border-radius: 6px;
+}
+
+.card-button:hover {
+  background-color: #1E8449;
 }
 
 .sidebar {
@@ -109,7 +322,7 @@ body {
   align-items: center;
   padding: 20px;
   color: #FFFFFF;
-  background-color: #2C3E50;
+  background-color: var(--color-main);
 }
 
 .site-footer p {
