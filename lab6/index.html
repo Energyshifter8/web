@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="mn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лаборатори 06: Зургийн цомог</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Агуулга руу алгасах</a>
+
+  <header class="site-header">
+    <a class="logo" href="index.html">
+      <svg class="logo-icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+        <path d="M4 7h3l2-3h6l2 3h3a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="12" cy="13" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      Зургийн цомог
+    </a>
+    <input class="menu-toggle" type="checkbox" id="menu-toggle">
+    <label class="menu-button" for="menu-toggle">&#9776; Цэс</label>
+    <nav class="site-nav" aria-label="Үндсэн цэс">
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../lab04/index.html">Нүүр</a></li>
+        <li><a class="nav-link" href="#gallery">Галерей</a></li>
+        <li><a class="nav-link" href="#flip">Flip карт</a></li>
+        <li><a class="nav-link" href="#video">Видео</a></li>
+        <li><a class="nav-link" href="#map">Газрын зураг</a></li>
+        <li><button class="theme-button" type="button" aria-pressed="false">Харанхуй горим</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <section class="hero">
+      <svg class="hero-art" viewBox="0 0 200 100" role="img" aria-labelledby="hero-art-title">
+        <title id="hero-art-title">Уул, нар дүрсэлсэн зураг</title>
+        <circle class="hero-sun" cx="150" cy="32" r="14"/>
+        <polygon class="hero-mountain-back" points="0,100 60,30 120,100"/>
+        <polygon class="hero-mountain" points="60,100 130,40 200,100"/>
+      </svg>
+      <h1 class="hero-title">Зургийн цомог</h1>
+      <p class="hero-text">
+        Байгалийн гэрэл зургууд. Зураг дээр хулгана аваачих эсвэл Tab товчоор
+        очиход зураг томорно.
+      </p>
+    </section>
+
+    <section id="gallery" class="section">
+      <h2 class="section-title">Галерей</h2>
+
+      <ul class="gallery">
+        <li class="gallery-item">
+          <figure class="gallery-card">
+            <a class="gallery-link" href="img/photo1.jpg">
+              <img src="img/photo1.jpg" alt="Хадан цохионоос харагдах цэнхэр усан булан" width="800" height="600">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Усан булан</strong>
+              <span class="credit">Зураг: Alexey Topolyanskiy</span>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li class="gallery-item">
+          <figure class="gallery-card">
+            <a class="gallery-link" href="img/photo2.jpg">
+              <img src="img/photo2.jpg" alt="Ногоон уулсын дундуур мушгирсан зам" width="800" height="600">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Уулын зам</strong>
+              <span class="credit">Зураг: Andrew Ridley</span>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li class="gallery-item">
+          <figure class="gallery-card">
+            <a class="gallery-link" href="img/photo3.jpg">
+              <img src="img/photo3.jpg" alt="Цастай уулсын бэлд байгаа майхнууд" width="800" height="600">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Цастай уул</strong>
+              <span class="credit">Зураг: Wolfgang Lutz</span>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li class="gallery-item">
+          <figure class="gallery-card">
+            <a class="gallery-link" href="img/photo4.jpg">
+              <img src="img/photo4.jpg" alt="Ой дундах өндөр хүрхрээ" width="800" height="600">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Хүрхрээ</strong>
+              <span class="credit">Зураг: Andrew Coelho</span>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li class="gallery-item">
+          <figure class="gallery-card">
+            <a class="gallery-link" href="img/photo5.jpg">
+              <img src="img/photo5.jpg" alt="Манантай ой дундуур урсах гол, чулуун дээр зогсож буй хүн" width="800" height="600">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Манантай гол</strong>
+              <span class="credit">Зураг: Steve Carter</span>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li class="gallery-item">
+          <figure class="gallery-card">
+            <a class="gallery-link" href="img/photo6.jpg">
+              <img src="img/photo6.jpg" alt="Далайн эргийн хадан хясаа, долгион" width="800" height="600">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Далайн эрэг</strong>
+              <span class="credit">Зураг: Joseph Barrientos</span>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+    </section>
+
+    <section id="flip" class="section">
+      <h2 class="section-title">Flip карт</h2>
+      <p>«Эргүүлэх» товч дарахад карт эргэж, ар тал нь харагдана.</p>
+
+      <div class="flip-grid">
+
+        <article class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="img/photo3.jpg" alt="Цастай уулсын бэлд байгаа майхнууд" width="800" height="600">
+              <h3 class="flip-title">Цастай уул</h3>
+            </div>
+            <div class="flip-back">
+              <h3 class="flip-title">Цастай уул</h3>
+              <p>Цастай уулсын бэлд байгаа майхнууд. Ар талд нь цастай оргилууд харагдана.</p>
+              <p class="credit">Зураг: Wolfgang Lutz, Unsplash</p>
+            </div>
+          </div>
+          <button class="flip-button" type="button" aria-pressed="false">Эргүүлэх</button>
+        </article>
+
+        <article class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="img/photo4.jpg" alt="Ой дундах өндөр хүрхрээ" width="800" height="600">
+              <h3 class="flip-title">Хүрхрээ</h3>
+            </div>
+            <div class="flip-back">
+              <h3 class="flip-title">Хүрхрээ</h3>
+              <p>Ой дундах өндөр хүрхрээ. Ус нь ногоон хавцал руу урсаж унана.</p>
+              <p class="credit">Зураг: Andrew Coelho, Unsplash</p>
+            </div>
+          </div>
+          <button class="flip-button" type="button" aria-pressed="false">Эргүүлэх</button>
+        </article>
+
+        <article class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="img/photo6.jpg" alt="Далайн эргийн хадан хясаа, долгион" width="800" height="600">
+              <h3 class="flip-title">Далайн эрэг</h3>
+            </div>
+            <div class="flip-back">
+              <h3 class="flip-title">Далайн эрэг</h3>
+              <p>Далайн эргийн хадан хясаа. Долгион хадыг угаана.</p>
+              <p class="credit">Зураг: Joseph Barrientos, Unsplash</p>
+            </div>
+          </div>
+          <button class="flip-button" type="button" aria-pressed="false">Эргүүлэх</button>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="video" class="section">
+      <h2 class="section-title">Видео</h2>
+      <video class="video" controls preload="metadata" playsinline poster="img/photo1.jpg" width="960" height="540">
+        <source src="video/clip.webm" type="video/webm">
+        <source src="video/clip.mp4" type="video/mp4">
+        <track kind="subtitles" src="video/clip.mn.vtt" srclang="mn" label="Монгол" default>
+        <p>Таны browser видео тоглуулж чадахгүй байна. <a href="video/clip.mp4">Видеог татах</a></p>
+      </video>
+    </section>
+
+    <section id="map" class="section">
+      <h2 class="section-title">Газрын зураг</h2>
+      <iframe class="map"
+        title="Улаанбаатар хотын газрын зураг (OpenStreetMap)"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=106.86%2C47.89%2C106.98%2C47.95&amp;layer=mapnik"
+        loading="lazy"
+        referrerpolicy="no-referrer"
+        sandbox="allow-scripts allow-same-origin"></iframe>
+      <p>
+        <a href="https://www.openstreetmap.org/#map=13/47.92/106.92" target="_blank" rel="noopener noreferrer">Том газрын зураг шинэ цонхонд нээх</a>
+      </p>
+    </section>
+
+  </main>
+
+  <p class="back-link"><a href="../lab04/index.html">← Нүүр хуудас руу буцах</a></p>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Болд Тэмүүлэн</p>
+    <p>Зургууд: <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
+  </footer>
+
+</body>
+</html>
