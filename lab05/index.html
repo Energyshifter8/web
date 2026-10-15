@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="mn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лаборатори 05: Responsive вэб хуудас</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <h1 class="site-name">Болд Тэмүүлэн</h1>
+    <input class="menu-toggle" type="checkbox" id="menu-toggle">
+    <label class="menu-button" for="menu-toggle">&#9776; Цэс</label>
+    <nav class="site-nav">
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../lab04/index.html">Нүүр</a></li>
+        <li><a class="nav-link" href="#labs">Лабууд</a></li>
+        <li><a class="nav-link" href="#interests">Сонирхол</a></li>
+        <li><a class="nav-link" href="#about">Миний тухай</a></li>
+        <li><a class="nav-link" href="wireframe.html">Wireframe</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2 class="hero-title">Сайн байна уу!</h2>
+    <p class="hero-text">
+      Би Computer Science-ийн 3-р курсын оюутан. Энэ хуудас гар утас, таблет,
+      компьютерийн дэлгэцэнд тохирч харагдана.
+    </p>
+    <a class="button" href="#labs">Лабуудыг үзэх</a>
+  </section>
+
+  <div class="container">
+
+    <main id="labs">
+      <h2 class="section-title">Миний лабораторийн ажлууд</h2>
+
+      <div class="card-grid">
+
+        <article class="card">
+          <h3 class="card-title">Лаб 1</h3>
+          <p class="card-text">HTML CV хуудас</p>
+          <a class="button" href="../lab01/index.html">Үзэх</a>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Лаб 2</h3>
+          <p class="card-text">Семантик HTML форм</p>
+          <a class="button" href="../lab02/index.html">Үзэх</a>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Лаб 3</h3>
+          <p class="card-text">Формыг CSS-ээр загварчлах</p>
+          <a class="button" href="../lab03/index.html">Үзэх</a>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Лаб 4</h3>
+          <p class="card-text">Flexbox, Grid layout</p>
+          <a class="button" href="../lab04/index.html">Үзэх</a>
+        </article>
+
+        <article class="card">
+          <h3 class="card-title">Лаб 5</h3>
+          <p class="card-text">Responsive хуудас</p>
+          <a class="button" href="index.html">Үзэх</a>
+        </article>
+
+      </div>
+
+      <h2 id="interests" class="section-title">Миний сонирхол</h2>
+
+      <ul class="interest-list">
+        <li class="interest">Вэб хөгжүүлэлт</li>
+        <li class="interest">Ном унших</li>
+        <li class="interest">Сагсан бөмбөг</li>
+      </ul>
+    </main>
+
+    <aside id="about" class="sidebar">
+      <h2 class="section-title">Миний тухай</h2>
+      <ul class="info-list">
+        <li><strong>Нэр:</strong> Болд Тэмүүлэн</li>
+        <li><strong>Мэргэжил:</strong> Computer Science</li>
+        <li><strong>Курс:</strong> 3-р курс</li>
+      </ul>
+    </aside>
+
+  </div>
+
+  <p class="back-link"><a href="../lab04/index.html">← Нүүр хуудас руу буцах</a></p>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Болд Тэмүүлэн</p>
+  </footer>
+
+</body>
+</html>

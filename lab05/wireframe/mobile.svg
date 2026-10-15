@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="1200" viewBox="0 0 840 1200" font-family="Arial, Helvetica, sans-serif" fill="#333">
+  <rect width="840" height="1200" fill="#FFFFFF"/>
+
+  <text x="40" y="36" font-size="18" font-weight="bold">1. Цэс хаалттай</text>
+  <text x="440" y="36" font-size="18" font-weight="bold">2. Цэс нээлттэй (☰ дарсны дараа)</text>
+
+  <g transform="translate(40,60)">
+    <rect x="0" y="0" width="360" height="56" fill="#BBBBBB"/>
+    <text x="16" y="34" font-size="16" font-weight="bold">Болд Тэмүүлэн</text>
+    <rect x="262" y="14" width="82" height="28" rx="6" fill="none" stroke="#333"/>
+    <rect x="272" y="21" width="16" height="2"/>
+    <rect x="272" y="27" width="16" height="2"/>
+    <rect x="272" y="33" width="16" height="2"/>
+    <text x="296" y="33" font-size="14">Цэс</text>
+
+    <rect x="0" y="56" width="360" height="180" fill="#EEEEEE"/>
+    <text x="180" y="100" font-size="20" font-weight="bold" text-anchor="middle">Гарчиг</text>
+    <rect x="50" y="116" width="260" height="8" fill="#CCCCCC"/>
+    <rect x="70" y="132" width="220" height="8" fill="#CCCCCC"/>
+    <rect x="115" y="156" width="130" height="34" rx="6" fill="#999999"/>
+    <text x="180" y="178" font-size="14" fill="#FFFFFF" text-anchor="middle">Товч</text>
+
+    <rect x="16" y="256" width="5" height="22" fill="#666666"/>
+    <text x="28" y="273" font-size="15" font-weight="bold">Миний лабууд</text>
+
+    <rect x="16" y="292" width="328" height="76" fill="#FFFFFF" stroke="#999999"/>
+    <text x="28" y="316" font-size="14" font-weight="bold">Лаб 1</text>
+    <rect x="28" y="326" width="140" height="7" fill="#CCCCCC"/>
+    <rect x="28" y="340" width="56" height="20" rx="4" fill="#999999"/>
+
+    <rect x="16" y="378" width="328" height="76" fill="#FFFFFF" stroke="#999999"/>
+    <text x="28" y="402" font-size="14" font-weight="bold">Лаб 2</text>
+    <rect x="28" y="412" width="140" height="7" fill="#CCCCCC"/>
+    <rect x="28" y="426" width="56" height="20" rx="4" fill="#999999"/>
+
+    <rect x="16" y="464" width="328" height="76" fill="#FFFFFF" stroke="#999999"/>
+    <text x="28" y="488" font-size="14" font-weight="bold">Лаб 3</text>
+    <rect x="28" y="498" width="140" height="7" fill="#CCCCCC"/>
+    <rect x="28" y="512" width="56" height="20" rx="4" fill="#999999"/>
+
+    <rect x="16" y="550" width="328" height="76" fill="#FFFFFF" stroke="#999999"/>
+    <text x="28" y="574" font-size="14" font-weight="bold">Лаб 4</text>
+    <rect x="28" y="584" width="140" height="7" fill="#CCCCCC"/>
+    <rect x="28" y="598" width="56" height="20" rx="4" fill="#999999"/>
+
+    <rect x="16" y="636" width="328" height="76" fill="#FFFFFF" stroke="#999999"/>
+    <text x="28" y="660" font-size="14" font-weight="bold">Лаб 5</text>
+    <rect x="28" y="670" width="140" height="7" fill="#CCCCCC"/>
+    <rect x="28" y="684" width="56" height="20" rx="4" fill="#999999"/>
+
+    <rect x="16" y="732" width="5" height="22" fill="#666666"/>
+    <text x="28" y="749" font-size="15" font-weight="bold">Миний сонирхол</text>
+
+    <rect x="16" y="768" width="328" height="40" fill="#FFFFFF" stroke="#999999"/>
+    <text x="180" y="793" font-size="14" text-anchor="middle">Сонирхол 1</text>
+    <rect x="16" y="818" width="328" height="40" fill="#FFFFFF" stroke="#999999"/>
+    <text x="180" y="843" font-size="14" text-anchor="middle">Сонирхол 2</text>
+    <rect x="16" y="868" width="328" height="40" fill="#FFFFFF" stroke="#999999"/>
+    <text x="180" y="893" font-size="14" text-anchor="middle">Сонирхол 3</text>
+
+    <rect x="16" y="928" width="328" height="128" fill="#FFFFFF" stroke="#999999"/>
+    <rect x="28" y="944" width="5" height="22" fill="#666666"/>
+    <text x="40" y="961" font-size="15" font-weight="bold">Миний тухай</text>
+    <rect x="28" y="984" width="200" height="8" fill="#CCCCCC"/>
+    <rect x="28" y="1008" width="200" height="8" fill="#CCCCCC"/>
+    <rect x="28" y="1032" width="200" height="8" fill="#CCCCCC"/>
+
+    <rect x="0" y="1076" width="360" height="44" fill="#BBBBBB"/>
+    <text x="180" y="1103" font-size="14" text-anchor="middle">Footer ©</text>
+
+    <rect x="0" y="0" width="360" height="1120" fill="none" stroke="#555555" stroke-width="2"/>
+  </g>
+
+  <g transform="translate(440,60)">
+    <rect x="0" y="0" width="360" height="56" fill="#BBBBBB"/>
+    <text x="16" y="34" font-size="16" font-weight="bold">Болд Тэмүүлэн</text>
+    <rect x="262" y="14" width="82" height="28" rx="6" fill="none" stroke="#333"/>
+    <rect x="272" y="21" width="16" height="2"/>
+    <rect x="272" y="27" width="16" height="2"/>
+    <rect x="272" y="33" width="16" height="2"/>
+    <text x="296" y="33" font-size="14">Цэс</text>
+
+    <rect x="0" y="56" width="360" height="220" fill="#BBBBBB"/>
+    <rect x="16" y="56" width="328" height="1" fill="#888888"/>
+    <text x="16" y="84" font-size="15">Нүүр</text>
+    <rect x="16" y="100" width="328" height="1" fill="#888888"/>
+    <text x="16" y="128" font-size="15">Лабууд</text>
+    <rect x="16" y="144" width="328" height="1" fill="#888888"/>
+    <text x="16" y="172" font-size="15">Сонирхол</text>
+    <rect x="16" y="188" width="328" height="1" fill="#888888"/>
+    <text x="16" y="216" font-size="15">Миний тухай</text>
+    <rect x="16" y="232" width="328" height="1" fill="#888888"/>
+    <text x="16" y="260" font-size="15">Wireframe</text>
+
+    <rect x="0" y="276" width="360" height="180" fill="#EEEEEE"/>
+    <text x="180" y="320" font-size="20" font-weight="bold" text-anchor="middle">Гарчиг</text>
+    <rect x="50" y="336" width="260" height="8" fill="#CCCCCC"/>
+    <rect x="70" y="352" width="220" height="8" fill="#CCCCCC"/>
+    <rect x="115" y="376" width="130" height="34" rx="6" fill="#999999"/>
+    <text x="180" y="398" font-size="14" fill="#FFFFFF" text-anchor="middle">Товч</text>
+
+    <rect x="16" y="476" width="5" height="22" fill="#666666"/>
+    <text x="28" y="493" font-size="15" font-weight="bold">Миний лабууд</text>
+
+    <rect x="16" y="512" width="328" height="76" fill="#FFFFFF" stroke="#999999"/>
+    <text x="28" y="536" font-size="14" font-weight="bold">Лаб 1</text>
+    <rect x="28" y="546" width="140" height="7" fill="#CCCCCC"/>
+    <rect x="28" y="560" width="56" height="20" rx="4" fill="#999999"/>
+
+    <rect x="16" y="598" width="328" height="76" fill="#FFFFFF" stroke="#999999"/>
+    <text x="28" y="622" font-size="14" font-weight="bold">Лаб 2</text>
+    <rect x="28" y="632" width="140" height="7" fill="#CCCCCC"/>
+    <rect x="28" y="646" width="56" height="20" rx="4" fill="#999999"/>
+
+    <text x="180" y="708" font-size="14" text-anchor="middle" fill="#777777">↓ доош үргэлжилнэ</text>
+
+    <rect x="0" y="0" width="360" height="720" fill="none" stroke="#555555" stroke-width="2"/>
+  </g>
+</svg>
