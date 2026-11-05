@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="mn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лаборатори 09: JavaScript туршилт</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js" defer></script>
+  <script src="js/experiments.js" defer></script>
+  <script src="js/algorithms.js" defer></script>
+  <script src="js/validators.js" defer></script>
+  <script src="js/tests.js" defer></script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Агуулга руу алгасах</a>
+
+  <header class="site-header">
+    <a class="logo" href="index.html">
+      <svg class="logo-icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+        <path d="M4 7h3l2-3h6l2 3h3a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="12" cy="13" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      Зургийн цомог
+    </a>
+    <input class="menu-toggle" type="checkbox" id="menu-toggle">
+    <label class="menu-button" for="menu-toggle">&#9776; Цэс</label>
+    <nav class="site-nav" aria-label="Үндсэн цэс">
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../lab04/index.html">Нүүр</a></li>
+        <li><a class="nav-link" href="index.html#feedback">Санал хүсэлт</a></li>
+        <li><a class="nav-link" href="#task1">Даалгавар 1</a></li>
+        <li><a class="nav-link" href="#task2">Даалгавар 2</a></li>
+        <li><a class="nav-link" href="#task3">Даалгавар 3</a></li>
+        <li><button class="theme-button" type="button" aria-pressed="false">Харанхуй горим</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <section class="hero">
+      <h1 class="hero-title">JavaScript туршилт</h1>
+      <p class="hero-text">
+        Хүснэгтүүдийг JavaScript үүсгэсэн. Ижил үр дүн DevTools Console дээр <code>console.table</code>-аар хэвлэгдэнэ (F12).
+      </p>
+    </section>
+
+    <section id="task1" class="section">
+      <h2 class="section-title">Даалгавар 1. Хувьсагч, төрөл, хөрвүүлэлт</h2>
+
+      <h3>typeof</h3>
+      <p><code>typeof null</code> нь <code>"object"</code>, массив ч мөн <code>"object"</code> гэж гардаг.</p>
+      <div class="table-wrap">
+        <table class="result-table" id="types-table">
+          <thead><tr><th scope="col">Хувьсагч</th><th scope="col">Утга</th><th scope="col">typeof</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <h3>Төрөл хөрвүүлэлт</h3>
+      <p><code>+</code> оператор мөртэй тааралдвал мөр нийлүүлнэ, <code>-</code>, <code>*</code> нь тоо руу хөрвүүлнэ.
+        <code>==</code> төрлийг хөрвүүлж харьцуулдаг, <code>===</code> хөрвүүлдэггүй.</p>
+      <div class="table-wrap">
+        <table class="result-table" id="conversion-table">
+          <thead><tr><th scope="col">Илэрхийлэл</th><th scope="col">Үр дүн</th><th scope="col">typeof</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <h3>0.1 + 0.2</h3>
+      <p>Тоо нь 2-тын бутархайгаар (IEEE 754) хадгалагддаг тул 0.1, 0.2-ыг яг таг илэрхийлж чадахгүй.
+        Иймээс бутархай тоог <code>Number.EPSILON</code>-оор эсвэл <code>toFixed</code>-оор харьцуулна.</p>
+      <div class="table-wrap">
+        <table class="result-table" id="float-table">
+          <thead><tr><th scope="col">Илэрхийлэл</th><th scope="col">Үр дүн</th><th scope="col">typeof</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="task2" class="section">
+      <h2 class="section-title">Даалгавар 2. js/algorithms.js</h2>
+      <p>8 функцийг бэлэн функцгүйгээр, зөвхөн давталт ба нөхцөлөөр бичсэн.</p>
+      <p class="summary" id="algorithms-summary"></p>
+      <div class="table-wrap">
+        <table class="result-table" id="algorithms-table">
+          <thead><tr><th scope="col">Дуудлага</th><th scope="col">Үр дүн</th><th scope="col">Хүлээгдэж буй</th><th scope="col">Шалгалт</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="task3" class="section">
+      <h2 class="section-title">Даалгавар 3. js/validators.js</h2>
+      <p>Функц бүр алдааны мессеж буцаана, утга зөв бол хоосон мөр <code>""</code> буцаана.</p>
+      <p class="summary" id="validators-summary"></p>
+      <div class="table-wrap">
+        <table class="result-table" id="validators-table">
+          <thead><tr><th scope="col">Функц</th><th scope="col">Оролт</th><th scope="col">Үр дүн</th><th scope="col">Шалгалт</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p>Даалгавар 4: эдгээр функцийг <a href="index.html#feedback">санал хүсэлтийн form</a>-той холбосон.</p>
+    </section>
+
+  </main>
+
+  <p class="back-link"><a href="index.html">← Зургийн цомог руу буцах</a></p>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Болд Тэмүүлэн</p>
+  </footer>
+
+</body>
+</html>

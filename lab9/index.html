@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="mn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лаборатори 09: JavaScript validation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js" defer></script>
+  <script src="js/validators.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Агуулга руу алгасах</a>
+
+  <header class="site-header">
+    <a class="logo" href="index.html">
+      <svg class="logo-icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+        <path d="M4 7h3l2-3h6l2 3h3a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="12" cy="13" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      Зургийн цомог
+    </a>
+    <input class="menu-toggle" type="checkbox" id="menu-toggle">
+    <label class="menu-button" for="menu-toggle">&#9776; Цэс</label>
+    <nav class="site-nav" aria-label="Үндсэн цэс">
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../lab04/index.html">Нүүр</a></li>
+        <li><a class="nav-link" href="#gallery">Галерей</a></li>
+        <li><a class="nav-link" href="#feedback">Санал хүсэлт</a></li>
+        <li><a class="nav-link" href="test.html">JS туршилт</a></li>
+        <li><button class="theme-button" type="button" aria-pressed="false">Харанхуй горим</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <section class="hero">
+      <svg class="hero-art" viewBox="0 0 200 100" role="img" aria-labelledby="hero-art-title">
+        <title id="hero-art-title">Уул, нар дүрсэлсэн зураг</title>
+        <circle class="hero-sun" cx="150" cy="32" r="14"/>
+        <polygon class="hero-mountain-back" points="0,100 60,30 120,100"/>
+        <polygon class="hero-mountain" points="60,100 130,40 200,100"/>
+      </svg>
+      <h1 class="hero-title">Зургийн цомог</h1>
+      <p class="hero-text">
+        Байгалийн гэрэл зургууд. Цомгийн талаарх санал хүсэлтээ доорх form-оор илгээнэ үү.
+      </p>
+    </section>
+
+    <section id="gallery" class="section">
+      <h2 class="section-title">Галерей</h2>
+
+      <ul class="gallery">
+        <li class="gallery-item">
+          <figure class="gallery-card">
+            <a class="gallery-link" href="img/photo1.jpg">
+              <img src="img/photo1.jpg" alt="Хадан цохионоос харагдах цэнхэр усан булан" width="800" height="600">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Усан булан</strong>
+              <span class="credit">Зураг: Alexey Topolyanskiy</span>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li class="gallery-item">
+          <figure class="gallery-card">
+            <a class="gallery-link" href="img/photo2.jpg">
+              <img src="img/photo2.jpg" alt="Ногоон уулсын дундуур мушгирсан зам" width="800" height="600">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Уулын зам</strong>
+              <span class="credit">Зураг: Andrew Ridley</span>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li class="gallery-item">
+          <figure class="gallery-card">
+            <a class="gallery-link" href="img/photo3.jpg">
+              <img src="img/photo3.jpg" alt="Цастай уулсын бэлд байгаа майхнууд" width="800" height="600">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Цастай уул</strong>
+              <span class="credit">Зураг: Wolfgang Lutz</span>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li class="gallery-item">
+          <figure class="gallery-card">
+            <a class="gallery-link" href="img/photo4.jpg">
+              <img src="img/photo4.jpg" alt="Ой дундах өндөр хүрхрээ" width="800" height="600">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Хүрхрээ</strong>
+              <span class="credit">Зураг: Andrew Coelho</span>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li class="gallery-item">
+          <figure class="gallery-card">
+            <a class="gallery-link" href="img/photo5.jpg">
+              <img src="img/photo5.jpg" alt="Манантай ой дундуур урсах гол, чулуун дээр зогсож буй хүн" width="800" height="600">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Манантай гол</strong>
+              <span class="credit">Зураг: Steve Carter</span>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li class="gallery-item">
+          <figure class="gallery-card">
+            <a class="gallery-link" href="img/photo6.jpg">
+              <img src="img/photo6.jpg" alt="Далайн эргийн хадан хясаа, долгион" width="800" height="600">
+            </a>
+            <figcaption class="gallery-caption">
+              <strong>Далайн эрэг</strong>
+              <span class="credit">Зураг: Joseph Barrientos</span>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+    </section>
+
+    <section id="feedback" class="section">
+      <h2 class="section-title">Санал хүсэлт</h2>
+      <p>Бүх талбарыг JavaScript-ээр шалгана. Талбараас гарах эсвэл «Илгээх» дарахад алдаа харагдана.</p>
+
+      <form id="feedback-form" class="feedback-form" action="#" method="post" novalidate>
+
+        <div class="field">
+          <label class="field-label" for="name">Нэр</label>
+          <input class="field-input" type="text" id="name" name="name" autocomplete="name"
+            aria-describedby="name-hint name-error">
+          <p class="field-hint" id="name-hint">2–50 тэмдэгт, тоо оруулахгүй.</p>
+          <p class="field-error" id="name-error" aria-live="polite"></p>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="email">И-мэйл</label>
+          <input class="field-input" type="email" id="email" name="email" autocomplete="email"
+            aria-describedby="email-hint email-error">
+          <p class="field-hint" id="email-hint">Жишээ: bat@mail.mn</p>
+          <p class="field-error" id="email-error" aria-live="polite"></p>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="password">Нууц үг</label>
+          <div class="password-row">
+            <input class="field-input" type="password" id="password" name="password" autocomplete="new-password"
+              aria-describedby="password-hint password-error">
+            <button class="password-toggle" type="button" aria-pressed="false" aria-controls="password">Харуулах</button>
+          </div>
+          <p class="field-hint" id="password-hint">Дор хаяж 8 тэмдэгт, зайгүй, үсэг ба тоо агуулна.</p>
+          <p class="field-error" id="password-error" aria-live="polite"></p>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="message">Санал хүсэлт</label>
+          <textarea class="field-input" id="message" name="message" rows="5"
+            aria-describedby="message-hint message-counter message-error"></textarea>
+          <div class="field-meta">
+            <p class="field-hint" id="message-hint">10–500 тэмдэгт.</p>
+            <p class="field-counter" id="message-counter">0 / 500</p>
+          </div>
+          <p class="field-error" id="message-error" aria-live="polite"></p>
+        </div>
+
+        <button class="submit-button" type="submit">Илгээх</button>
+        <p class="form-status" id="form-status" role="status"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <p class="back-link"><a href="../lab04/index.html">← Нүүр хуудас руу буцах</a></p>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Болд Тэмүүлэн</p>
+    <p>Зургууд: <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
+  </footer>
+
+</body>
+</html>
