@@ -1,0 +1,24 @@
+@use "../abstracts" as *;
+
+// Gallery болон flip-grid хоёулаа 3 -> 2 -> 1 багана болдог.
+// Давтагдсан кодыг placeholder-т нэгтгэв.
+%responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space);
+
+  @include respond(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond(mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Зураг болон видео дээр нийтлэг карт
+%card-surface {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-base);
+}

@@ -1,0 +1,32 @@
+@use "sass:math";
+@use "sass:color";
+
+// px утгыг rem болгоно. rem(18px) -> 1.125rem
+@function rem($px, $base: 16px) {
+  @return math.div($px, $base) * 1rem;
+}
+
+// WCAG харьцангуй гэрэлтэлт (relative luminance)
+@function -channel-luminance($value) {
+  $c: math.div($value, 255);
+  @if $c <= 0.03928 {
+    @return math.div($c, 12.92);
+  }
+  @return math.pow(math.div($c + 0.055, 1.055), 2.4);
+}
+
+@function luminance($color) {
+  $r: -channel-luminance(color.channel($color, "red", $space: rgb));
+  $g: -channel-luminance(color.channel($color, "green", $space: rgb));
+  $b: -channel-luminance(color.channel($color, "blue", $space: rgb));
+  @return 0.2126 * $r + 0.7152 * $g + 0.0722 * $b;
+}
+
+// Дэвсгэр өнгөн дээр уншигдах текстийн өнгийг сонгоно.
+// Бараан дэвсгэр -> $light, цайвар дэвсгэр -> $dark
+@function contrast($bg, $light: #FFFFFF, $dark: #000000) {
+  @if luminance($bg) > 0.179 {
+    @return $dark;
+  }
+  @return $light;
+}

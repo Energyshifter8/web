@@ -1,0 +1,44 @@
+@use "sass:map";
+@use "sass:list";
+@use "tokens" as *;
+
+// Breakpoint-ээр media query бичнэ.
+// @include respond(mobile) { ... }  ->  @media (max-width: 600px) { ... }
+@mixin respond($name) {
+  @if not map.has-key($breakpoints, $name) {
+    @error "Breakpoint `#{$name}` олдсонгүй. Боломжтой: #{map.keys($breakpoints)}";
+  }
+  @media (max-width: map.get($breakpoints, $name)) {
+    @content;
+  }
+}
+
+// Flex контейнер, cross тэнхлэгээр голлуулна (align-items: center).
+// $align: null өгвөл align-items бичихгүй.
+@mixin flex-center($direction: null, $justify: null, $align: center, $gap: null, $wrap: false) {
+  display: flex;
+  @if $direction {
+    flex-direction: $direction;
+  }
+  @if $wrap {
+    flex-wrap: wrap;
+  }
+  @if $justify {
+    justify-content: $justify;
+  }
+  @if $align {
+    align-items: $align;
+  }
+  @if $gap {
+    gap: $gap;
+  }
+}
+
+// Theme солигдох үед нийтлэг transition
+@mixin transition($props...) {
+  $list: ();
+  @each $prop in $props {
+    $list: list.append($list, $prop $duration ease, comma);
+  }
+  transition: $list;
+}

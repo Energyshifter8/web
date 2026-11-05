@@ -1,0 +1,33 @@
+@use "sass:map";
+@use "../abstracts" as *;
+
+// Token map-уудаас CSS custom property үүсгэнэ.
+@mixin custom-properties($colors, $shadows) {
+  @each $name, $value in $colors {
+    --color-#{$name}: #{$value};
+  }
+
+  // Текстийн өнгийг дэвсгэрээс нь contrast()-аар тооцоолно
+  --color-on-accent: #{contrast(map.get($colors, "accent"), #FFFFFF, #0B2215)};
+  --color-header-text: #{contrast(map.get($colors, "header"))};
+
+  @each $name, $value in $shadows {
+    --shadow-#{$name}: #{$value};
+  }
+}
+
+:root {
+  @include custom-properties($colors-light, $shadows-light);
+
+  @each $name, $value in $radii {
+    --radius-#{$name}: #{$value};
+  }
+
+  --space: #{map.get($spacers, "2")};
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  @include custom-properties($colors-dark, $shadows-dark);
+  color-scheme: dark;
+}

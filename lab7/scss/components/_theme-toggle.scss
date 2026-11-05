@@ -1,0 +1,23 @@
+@use "../abstracts" as *;
+
+// Block: theme-toggle (харанхуй/цайвар горим солих товч)
+.theme-toggle {
+  padding: 6px 14px;
+  font-family: inherit;
+  font-size: rem(14px);
+  color: var(--color-header-text);
+  background-color: transparent;
+  border: 1px solid var(--color-header-text);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  @include transition(background-color, color);
+
+  &[aria-pressed="true"] {
+    color: var(--color-header);
+    background-color: var(--color-header-text);
+  }
+
+  @include respond(mobile) {
+    margin: 10px 0;
+  }
+}

@@ -1,0 +1,29 @@
+@use "../abstracts" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: $font-family;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  @include transition(background-color, color);
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}

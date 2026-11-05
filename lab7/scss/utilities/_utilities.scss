@@ -1,0 +1,50 @@
+@use "sass:map";
+@use "../abstracts" as *;
+
+// @each ашиглан token map-уудаас utility класс үүсгэнэ.
+// Жишээ: .u-text-center, .u-mt-2, .u-p-0, .u-color-accent, .u-bg-surface, .u-rounded-md
+
+@each $align in (left, center, right) {
+  .u-text-#{$align} {
+    text-align: $align !important;
+  }
+}
+
+$spacing-props: (
+  "m": margin,
+  "mt": margin-top,
+  "mb": margin-bottom,
+  "p": padding,
+);
+
+@each $prefix, $prop in $spacing-props {
+  @each $key, $value in $spacers {
+    .u-#{$prefix}-#{$key} {
+      #{$prop}: $value !important;
+    }
+  }
+}
+
+@each $name, $value in $colors-light {
+  .u-color-#{$name} {
+    color: var(--color-#{$name}) !important;
+  }
+
+  .u-bg-#{$name} {
+    background-color: var(--color-#{$name}) !important;
+  }
+}
+
+@each $name, $value in $radii {
+  .u-rounded-#{$name} {
+    border-radius: var(--radius-#{$name}) !important;
+  }
+}
+
+@each $name, $value in $breakpoints {
+  .u-hide-#{$name} {
+    @include respond($name) {
+      display: none !important;
+    }
+  }
+}

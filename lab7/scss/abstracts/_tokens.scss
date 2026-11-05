@@ -1,0 +1,65 @@
+// =============================================================
+// Tokens: өнгө, радиус, breakpoint, зай, сүүдэр
+// Бүх утга энд нэг газар map хэлбэрээр хадгалагдана.
+// =============================================================
+
+// Цайвар горимын өнгө
+$colors-light: (
+  "bg": #F4F6F8,
+  "surface": #FFFFFF,
+  "text": #2C3E50,
+  "muted": #566573,
+  "border": #E5E8E8,
+  "accent": #1E8449,
+  "accent-hover": #145A32,
+  "header": #2C3E50,
+  "sun": #F1C40F,
+  "divider": #3E5368,
+);
+
+// Харанхуй горимд солигдох өнгө
+$colors-dark: (
+  "bg": #121A22,
+  "surface": #1C2833,
+  "text": #E8EDF2,
+  "muted": #AAB7B8,
+  "border": #2C3E50,
+  "accent": #2ECC71,
+  "accent-hover": #58D68D,
+  "header": #0B1118,
+);
+
+// Булангийн радиус
+$radii: (
+  "md": 8px,
+);
+
+// Breakpoint (max-width)
+$breakpoints: (
+  "tablet": 1024px,
+  "mobile": 600px,
+);
+
+// Зай (utility класс болон --space-д ашиглана)
+$spacers: (
+  "0": 0,
+  "1": 10px,
+  "2": 20px,
+  "3": 30px,
+  "4": 40px,
+);
+
+$shadows-light: (
+  "base": 0 2px 8px rgba(0, 0, 0, 0.08),
+  "hover": 0 12px 24px rgba(0, 0, 0, 0.18),
+);
+
+$shadows-dark: (
+  "base": 0 2px 8px rgba(0, 0, 0, 0.4),
+  "hover": 0 12px 24px rgba(0, 0, 0, 0.6),
+);
+
+$font-family: "Noto Sans", Arial, sans-serif;
+$duration: 0.3s;
+$container-width: 1100px;
+$gallery-count: 6;

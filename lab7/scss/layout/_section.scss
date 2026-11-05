@@ -1,0 +1,38 @@
+@use "../abstracts" as *;
+
+// Block: section
+.section {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 40px 20px 0 20px;
+
+  @include respond(mobile) {
+    padding: 30px 16px 0 16px;
+  }
+
+  &__title {
+    margin: 0 0 15px 0;
+    padding-left: 10px;
+    font-size: rem(22px);
+    border-left: 5px solid var(--color-accent);
+  }
+
+  a {
+    color: var(--color-accent);
+  }
+}
+
+// Block: back-link
+.back-link {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 30px 20px;
+
+  @include respond(mobile) {
+    padding: 30px 16px;
+  }
+
+  &__link {
+    color: var(--color-accent);
+  }
+}

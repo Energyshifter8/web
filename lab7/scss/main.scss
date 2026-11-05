@@ -1,0 +1,28 @@
+// =============================================================
+// Лаб 7: Sass/SCSS — Лаб 6-ийн сайтын refactor
+// Build: npm run build  (compressed -> css/style.css)
+// =============================================================
+
+// 1. Base
+@use "base/root";
+@use "base/base";
+
+// 2. Layout
+@use "layout/header";
+@use "layout/nav";
+@use "layout/section";
+@use "layout/footer";
+
+// 3. Components
+@use "components/skip-link";
+@use "components/theme-toggle";
+@use "components/hero";
+@use "components/gallery";
+@use "components/flip-card";
+@use "components/media";
+
+// 4. Utilities
+@use "utilities/utilities";
+
+// 5. Animation, reduced motion
+@use "base/animations";

@@ -1,0 +1,60 @@
+@use "../abstracts" as *;
+
+// Block: hero
+.hero {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  @include transition(background-color);
+
+  @include respond(mobile) {
+    padding: 30px 16px;
+  }
+
+  &__art {
+    display: block;
+    width: 200px;
+    height: auto;
+    margin: 0 auto 10px auto;
+  }
+
+  &__sun {
+    fill: var(--color-sun);
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: sun-pulse 2s ease-in-out infinite alternate;
+  }
+
+  &__mountain {
+    fill: var(--color-accent);
+
+    &--back {
+      fill: var(--color-muted);
+    }
+  }
+
+  &__title {
+    margin: 0 0 10px 0;
+    font-size: rem(36px);
+    color: var(--color-accent);
+
+    @include respond(tablet) {
+      font-size: rem(30px);
+    }
+
+    @include respond(mobile) {
+      font-size: rem(26px);
+    }
+  }
+
+  &__text {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: rem(18px);
+
+    @include respond(mobile) {
+      font-size: rem(16px);
+    }
+  }
+}
