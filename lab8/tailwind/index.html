@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="mn" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Лаб 8: Зургийн цомог — Tailwind CSS хувилбар">
+  <title>Лаб 8: Зургийн цомог (Tailwind)</title>
+  <link rel="icon" href="data:,">
+  <script>
+    // Хуудас зурагдахаас өмнө theme тохируулна (анивчихгүй)
+    (function () {
+      var saved = localStorage.getItem("theme");
+      var dark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
+    })();
+  </script>
+  <link rel="stylesheet" href="dist/output.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body class="bg-page leading-relaxed text-ink transition-colors duration-300 dark:bg-page-dark dark:text-slate-100">
+
+  <a class="absolute -top-20 left-2 z-50 rounded-lg bg-brand px-4 py-2 text-white focus:top-2 dark:bg-brand-light dark:text-on-brand-dark" href="#main">Агуулга руу алгасах</a>
+
+  <!-- 1. Navbar -->
+  <nav class="sticky top-0 z-40 bg-ink text-white dark:bg-ink-dark" aria-label="Үндсэн цэс">
+    <div class="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 px-4 py-3">
+      <a class="mr-auto flex items-center gap-2 text-xl font-bold" href="index.html">
+        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false">
+          <path d="M4 7h3l2-3h6l2 3h3a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <circle cx="12" cy="13" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        Зургийн цомог
+      </a>
+      <button class="menu-button rounded-md border border-white/60 px-3 py-1 md:hidden" type="button"
+        aria-controls="main-nav" aria-expanded="false">&#9776; Цэс</button>
+      <ul id="main-nav" class="hidden w-full flex-col py-2 md:flex md:w-auto md:flex-row md:items-center md:gap-5 md:py-0">
+        <li><a class="block border-t border-white/15 py-2 hover:text-brand-light md:border-0 md:py-0" href="../index.html">Нүүр</a></li>
+        <li><a class="block border-t border-white/15 py-2 hover:text-brand-light md:border-0 md:py-0" href="#gallery">Галерей</a></li>
+        <li><a class="block border-t border-white/15 py-2 hover:text-brand-light md:border-0 md:py-0" href="#video">Видео</a></li>
+        <li><a class="block border-t border-white/15 py-2 hover:text-brand-light md:border-0 md:py-0" href="#map">Газрын зураг</a></li>
+        <li><a class="block border-t border-white/15 py-2 hover:text-brand-light md:border-0 md:py-0" href="#send">Зураг илгээх</a></li>
+        <li class="pt-2 md:pt-0">
+          <button class="theme-toggle cursor-pointer rounded-md border border-white px-3 py-1 text-sm transition-colors hover:bg-white hover:text-ink aria-pressed:bg-white aria-pressed:text-ink" type="button" aria-pressed="false">Харанхуй горим</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <header class="border-b border-slate-200 bg-white px-4 py-12 text-center dark:border-slate-700 dark:bg-surface-dark">
+      <svg class="mx-auto mb-2" viewBox="0 0 200 100" width="200" height="100" role="img" aria-labelledby="hero-art-title">
+        <title id="hero-art-title">Уул, нар дүрсэлсэн зураг</title>
+        <circle class="fill-sun motion-safe:animate-pulse" cx="150" cy="32" r="14"/>
+        <polygon class="fill-slate-500 dark:fill-slate-400" points="0,100 60,30 120,100"/>
+        <polygon class="fill-brand dark:fill-brand-light" points="60,100 130,40 200,100"/>
+      </svg>
+      <h1 class="mb-3 text-4xl font-bold text-brand md:text-5xl dark:text-brand-light">Зургийн цомог</h1>
+      <p class="mx-auto mb-6 max-w-xl text-lg">
+        Байгалийн гэрэл зургууд. Өөрийн зургаа доорх формоор илгээгээрэй.
+      </p>
+      <a class="inline-block rounded-lg bg-brand px-6 py-3 text-lg font-semibold text-white transition-colors hover:bg-brand-hover dark:bg-brand-light dark:text-on-brand-dark dark:hover:bg-brand-light-hover" href="#send">Зураг илгээх</a>
+    </header>
+
+    <!-- 2. 3 баганатай card grid -->
+    <section id="gallery" class="mx-auto max-w-6xl px-4 py-12">
+      <h2 class="mb-6 border-l-4 border-brand pl-3 text-2xl font-bold dark:border-brand-light">Галерей</h2>
+      <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+        <li>
+          <figure class="h-full overflow-hidden rounded-lg bg-white shadow-sm transition duration-300 hover:-translate-y-1.5 hover:shadow-xl focus-within:-translate-y-1.5 dark:bg-surface-dark">
+            <img class="aspect-4/3 w-full object-cover" src="../img/photo1.jpg" alt="Хадан цохионоос харагдах цэнхэр усан булан" width="800" height="600">
+            <figcaption class="px-4 py-3">
+              <h3 class="font-semibold">Усан булан</h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400">Зураг: Alexey Topolyanskiy</p>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <figure class="h-full overflow-hidden rounded-lg bg-white shadow-sm transition duration-300 hover:-translate-y-1.5 hover:shadow-xl focus-within:-translate-y-1.5 dark:bg-surface-dark">
+            <img class="aspect-4/3 w-full object-cover" src="../img/photo2.jpg" alt="Ногоон уулсын дундуур мушгирсан зам" width="800" height="600" loading="lazy">
+            <figcaption class="px-4 py-3">
+              <h3 class="font-semibold">Уулын зам</h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400">Зураг: Andrew Ridley</p>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <figure class="h-full overflow-hidden rounded-lg bg-white shadow-sm transition duration-300 hover:-translate-y-1.5 hover:shadow-xl focus-within:-translate-y-1.5 dark:bg-surface-dark">
+            <img class="aspect-4/3 w-full object-cover" src="../img/photo3.jpg" alt="Цастай уулсын бэлд байгаа майхнууд" width="800" height="600" loading="lazy">
+            <figcaption class="px-4 py-3">
+              <h3 class="font-semibold">Цастай уул</h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400">Зураг: Wolfgang Lutz</p>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <figure class="h-full overflow-hidden rounded-lg bg-white shadow-sm transition duration-300 hover:-translate-y-1.5 hover:shadow-xl focus-within:-translate-y-1.5 dark:bg-surface-dark">
+            <img class="aspect-4/3 w-full object-cover" src="../img/photo4.jpg" alt="Ой дундах өндөр хүрхрээ" width="800" height="600" loading="lazy">
+            <figcaption class="px-4 py-3">
+              <h3 class="font-semibold">Хүрхрээ</h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400">Зураг: Andrew Coelho</p>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <figure class="h-full overflow-hidden rounded-lg bg-white shadow-sm transition duration-300 hover:-translate-y-1.5 hover:shadow-xl focus-within:-translate-y-1.5 dark:bg-surface-dark">
+            <img class="aspect-4/3 w-full object-cover" src="../img/photo5.jpg" alt="Манантай ой дундуур урсах гол, чулуун дээр зогсож буй хүн" width="800" height="600" loading="lazy">
+            <figcaption class="px-4 py-3">
+              <h3 class="font-semibold">Манантай гол</h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400">Зураг: Steve Carter</p>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li>
+          <figure class="h-full overflow-hidden rounded-lg bg-white shadow-sm transition duration-300 hover:-translate-y-1.5 hover:shadow-xl focus-within:-translate-y-1.5 dark:bg-surface-dark">
+            <img class="aspect-4/3 w-full object-cover" src="../img/photo6.jpg" alt="Далайн эргийн хадан хясаа, долгион" width="800" height="600" loading="lazy">
+            <figcaption class="px-4 py-3">
+              <h3 class="font-semibold">Далайн эрэг</h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400">Зураг: Joseph Barrientos</p>
+            </figcaption>
+          </figure>
+        </li>
+
+      </ul>
+    </section>
+
+    <section id="video" class="mx-auto max-w-6xl px-4 pb-12">
+      <h2 class="mb-6 border-l-4 border-brand pl-3 text-2xl font-bold dark:border-brand-light">Видео</h2>
+      <video class="aspect-video w-full max-w-4xl rounded-lg bg-black object-cover" controls preload="metadata" playsinline poster="../img/photo1.jpg">
+        <source src="../video/clip.webm" type="video/webm">
+        <source src="../video/clip.mp4" type="video/mp4">
+        <track kind="subtitles" src="../video/clip.mn.vtt" srclang="mn" label="Монгол" default>
+        <p>Таны browser видео тоглуулж чадахгүй байна. <a href="../video/clip.mp4">Видеог татах</a></p>
+      </video>
+    </section>
+
+    <section id="map" class="mx-auto max-w-6xl px-4 pb-12">
+      <h2 class="mb-6 border-l-4 border-brand pl-3 text-2xl font-bold dark:border-brand-light">Газрын зураг</h2>
+      <iframe class="h-64 w-full rounded-lg border border-slate-200 md:h-90 dark:border-slate-700"
+        title="Улаанбаатар хотын газрын зураг (OpenStreetMap)"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=106.86%2C47.89%2C106.98%2C47.95&amp;layer=mapnik"
+        loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin"></iframe>
+      <p class="mt-2">
+        <a class="text-brand-hover underline dark:text-brand-light" href="https://www.openstreetmap.org/#map=13/47.92/106.92" target="_blank" rel="noopener noreferrer">Том газрын зураг шинэ цонхонд нээх</a>
+      </p>
+    </section>
+
+    <!-- 3. Form validation -->
+    <section id="send" class="mx-auto max-w-6xl px-4 pb-12">
+      <h2 class="mb-6 border-l-4 border-brand pl-3 text-2xl font-bold dark:border-brand-light">Зураг илгээх</h2>
+      <form class="validate-form group grid gap-4 rounded-lg bg-white p-6 shadow-sm md:grid-cols-2 dark:bg-surface-dark" novalidate>
+        <div>
+          <label for="name" class="mb-1 block font-medium">Нэр</label>
+          <input type="text" id="name" name="name" required minlength="2" autocomplete="name" aria-describedby="name-error"
+            class="peer w-full rounded-md border border-slate-300 bg-white px-3 py-2 outline-none focus:border-brand focus:ring-4 focus:ring-brand/25 aria-invalid:border-red-600 aria-invalid:focus:ring-red-600/25 group-data-submitted:valid:border-green-600 dark:border-slate-600 dark:bg-slate-900">
+          <p id="name-error" class="mt-1 hidden text-sm text-red-600 peer-aria-invalid:block dark:text-red-400">Нэрээ оруулна уу (2-оос дээш үсэг).</p>
+        </div>
+        <div>
+          <label for="email" class="mb-1 block font-medium">И-мэйл</label>
+          <input type="email" id="email" name="email" required autocomplete="email" aria-describedby="email-error"
+            class="peer w-full rounded-md border border-slate-300 bg-white px-3 py-2 outline-none focus:border-brand focus:ring-4 focus:ring-brand/25 aria-invalid:border-red-600 aria-invalid:focus:ring-red-600/25 group-data-submitted:valid:border-green-600 dark:border-slate-600 dark:bg-slate-900">
+          <p id="email-error" class="mt-1 hidden text-sm text-red-600 peer-aria-invalid:block dark:text-red-400">Зөв и-мэйл хаяг оруулна уу.</p>
+        </div>
+        <div>
+          <label for="title" class="mb-1 block font-medium">Зургийн нэр</label>
+          <input type="text" id="title" name="title" required aria-describedby="title-error"
+            class="peer w-full rounded-md border border-slate-300 bg-white px-3 py-2 outline-none focus:border-brand focus:ring-4 focus:ring-brand/25 aria-invalid:border-red-600 aria-invalid:focus:ring-red-600/25 group-data-submitted:valid:border-green-600 dark:border-slate-600 dark:bg-slate-900">
+          <p id="title-error" class="mt-1 hidden text-sm text-red-600 peer-aria-invalid:block dark:text-red-400">Зургийн нэрийг оруулна уу.</p>
+        </div>
+        <div>
+          <label for="category" class="mb-1 block font-medium">Ангилал</label>
+          <select id="category" name="category" required aria-describedby="category-error"
+            class="peer w-full rounded-md border border-slate-300 bg-white px-3 py-2 outline-none focus:border-brand focus:ring-4 focus:ring-brand/25 aria-invalid:border-red-600 aria-invalid:focus:ring-red-600/25 group-data-submitted:valid:border-green-600 dark:border-slate-600 dark:bg-slate-900">
+            <option value="" selected disabled>Сонгоно уу...</option>
+            <option>Уул</option>
+            <option>Ус, гол</option>
+            <option>Ой</option>
+            <option>Далай</option>
+          </select>
+          <p id="category-error" class="mt-1 hidden text-sm text-red-600 peer-aria-invalid:block dark:text-red-400">Ангилал сонгоно уу.</p>
+        </div>
+        <div class="md:col-span-2">
+          <label for="photo" class="mb-1 block font-medium">Зураг (JPG, PNG)</label>
+          <input type="file" id="photo" name="photo" accept="image/jpeg,image/png" required aria-describedby="photo-error"
+            class="peer w-full rounded-md border border-slate-300 bg-white text-sm outline-none file:mr-3 file:border-0 file:bg-slate-100 file:px-3 file:py-2 focus:border-brand focus:ring-4 focus:ring-brand/25 aria-invalid:border-red-600 group-data-submitted:valid:border-green-600 dark:border-slate-600 dark:bg-slate-900 dark:file:bg-slate-700 dark:file:text-slate-100">
+          <p id="photo-error" class="mt-1 hidden text-sm text-red-600 peer-aria-invalid:block dark:text-red-400">Зургийн файл сонгоно уу.</p>
+        </div>
+        <div class="md:col-span-2">
+          <label for="message" class="mb-1 block font-medium">Тайлбар</label>
+          <textarea id="message" name="message" rows="3" maxlength="300"
+            class="w-full rounded-md border border-slate-300 bg-white px-3 py-2 outline-none focus:border-brand focus:ring-4 focus:ring-brand/25 dark:border-slate-600 dark:bg-slate-900"></textarea>
+          <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">300 хүртэл тэмдэгт.</p>
+        </div>
+        <div class="md:col-span-2">
+          <div class="flex flex-wrap items-center gap-2">
+            <input type="checkbox" id="agree" required aria-describedby="agree-error"
+              class="peer size-4 accent-brand aria-invalid:outline-2 aria-invalid:outline-red-600">
+            <label for="agree" class="peer-aria-invalid:text-red-600 dark:peer-aria-invalid:text-red-400">Зургийг сайтад нийтлэхийг зөвшөөрч байна</label>
+            <p id="agree-error" class="hidden basis-full text-sm text-red-600 peer-aria-invalid:block dark:text-red-400">Зөвшөөрөх шаардлагатай.</p>
+          </div>
+        </div>
+        <div class="md:col-span-2">
+          <button class="cursor-pointer rounded-lg bg-brand px-5 py-2 font-semibold text-white transition-colors hover:bg-brand-hover focus-visible:ring-4 focus-visible:ring-brand/40 focus-visible:outline-none dark:bg-brand-light dark:text-on-brand-dark dark:hover:bg-brand-light-hover" type="submit">Илгээх</button>
+        </div>
+        <p class="form-success hidden rounded-md border border-green-300 bg-green-50 px-4 py-3 text-green-800 md:col-span-2 dark:border-green-800 dark:bg-green-950 dark:text-green-200" role="status">Баярлалаа! Таны зураг амжилттай илгээгдлээ.</p>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="bg-ink px-4 py-6 text-center text-sm text-white dark:bg-ink-dark">
+    <p class="mb-1">&copy; 2026 Болд Тэмүүлэн</p>
+    <p>Зургууд: <a class="underline" href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
+  </footer>
+
+</body>
+</html>

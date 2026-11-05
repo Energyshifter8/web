@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="mn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лаб 8: Bootstrap ба Tailwind CSS</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root {
+      --bg: #F4F6F8;
+      --surface: #FFFFFF;
+      --text: #2C3E50;
+      --muted: #566573;
+      --border: #E5E8E8;
+      --brand: #1E8449;
+      --brand-dark: #145A32;
+      color-scheme: light dark;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121A22;
+        --surface: #1C2833;
+        --text: #E8EDF2;
+        --muted: #AAB7B8;
+        --border: #2C3E50;
+        --brand: #2ECC71;
+        --brand-dark: #58D68D;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 16px;
+    }
+
+    h1 { margin: 0 0 4px; color: var(--brand); }
+    h2 { margin: 36px 0 12px; padding-left: 10px; border-left: 5px solid var(--brand); font-size: 1.3rem; }
+    .sub { margin: 0; color: var(--muted); }
+
+    .links { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 24px; }
+    .link-card {
+      display: block;
+      padding: 20px;
+      color: inherit;
+      text-decoration: none;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .link-card:hover, .link-card:focus-visible { transform: translateY(-3px); border-color: var(--brand); }
+    .link-card strong { display: block; font-size: 1.15rem; color: var(--brand-dark); }
+    .link-card span { color: var(--muted); font-size: 0.9rem; }
+
+    .table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+    th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+    thead th { background: var(--border); }
+    tbody tr:last-child td, tbody tr:last-child th { border-bottom: 0; }
+    td small { color: var(--muted); }
+    .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .win { color: var(--brand-dark); font-weight: 700; }
+
+    .note { color: var(--muted); font-size: 0.9rem; }
+    .conclusion { padding: 20px; background: var(--surface); border-left: 5px solid var(--brand); border-radius: 0 8px 8px 0; }
+    a { color: var(--brand-dark); }
+
+    @media (prefers-reduced-motion: reduce) { .link-card { transition: none; } }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>Лаб 8. Bootstrap ба Tailwind CSS</h1>
+    <p class="sub">Нэг хуудас, хоёр арга — Лаб 6-ийн фото цомгийг хоёр удаа бүтээж харьцуулав.</p>
+
+    <nav class="links" aria-label="Хувилбарууд">
+      <a class="link-card" href="bootstrap/index.html">
+        <strong>Bootstrap 5.3 хувилбар</strong>
+        <span>CDN, navbar + collapse, card grid, .was-validated, data-bs-theme, .btn-brand</span>
+      </a>
+      <a class="link-card" href="tailwind/index.html">
+        <strong>Tailwind CSS 4 хувилбар</strong>
+        <span>@tailwindcss/cli build, utility class, aria-invalid:, @custom-variant dark, @theme</span>
+      </a>
+    </nav>
+
+    <h2>Даалгаврын гүйцэтгэл</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th scope="col">Даалгавар</th><th scope="col">Bootstrap</th><th scope="col">Tailwind</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1–2. Navbar, 3 баганатай grid, form validation</th>
+            <td><code>navbar-expand-md</code> + collapse, <code>row-cols-lg-3</code>, <code>.needs-validation</code> / <code>.was-validated</code>; CDN-ээр холбосон</td>
+            <td><code>md:flex</code> цэс, <code>lg:grid-cols-3</code>, <code>aria-invalid:</code> / <code>peer-aria-invalid:</code>; <code>npm run build</code></td>
+          </tr>
+          <tr>
+            <th scope="row">3. Dark mode товч</th>
+            <td><code>&lt;html data-bs-theme="dark"&gt;</code></td>
+            <td><code>@custom-variant dark (&amp;:where([data-theme=dark], [data-theme=dark] *))</code></td>
+          </tr>
+          <tr>
+            <th scope="row">4. Брэнд өнгө</th>
+            <td><code>.btn-brand</code>: <code>--bs-btn-bg: var(--brand)</code> гэх мэт CSS variable</td>
+            <td><code>@theme { --color-brand: #1E8449; }</code> → <code>bg-brand</code>, <code>text-brand</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>5. Хэмжилтийн үр дүн</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th scope="col">Хэмжүүр</th><th scope="col">Bootstrap</th><th scope="col">Tailwind</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">HTML</th>
+            <td class="num win">12.5 KB <small>(gzip 3.8 KB)</small></td>
+            <td class="num">16.3 KB <small>(gzip 4.2 KB)</small></td>
+          </tr>
+          <tr>
+            <th scope="row">CSS</th>
+            <td class="num">228.9 KB <small>(gzip 30.7 KB)</small><br><small>bootstrap.min.css + style.css</small></td>
+            <td class="num win">20.2 KB <small>(gzip 4.7 KB)</small><br><small>dist/output.css</small></td>
+          </tr>
+          <tr>
+            <th scope="row">JavaScript</th>
+            <td class="num">80.0 KB <small>(gzip 23.7 KB)</small><br><small>bootstrap.bundle.min.js + script.js</small></td>
+            <td class="num win">2.1 KB <small>(gzip 0.8 KB)</small><br><small>script.js</small></td>
+          </tr>
+          <tr>
+            <th scope="row">Нийт (HTML + CSS + JS)</th>
+            <td class="num">321.4 KB <small>(gzip 58.2 KB)</small></td>
+            <td class="num win">38.7 KB <small>(gzip 9.6 KB)</small></td>
+          </tr>
+          <tr>
+            <th scope="row">CSS/JS хүсэлтийн тоо</th>
+            <td class="num">4 <small>(2 нь CDN)</small></td>
+            <td class="num win">2</td>
+          </tr>
+          <tr>
+            <th scope="row">Нэг card-ын class тоо</th>
+            <td class="num win">13</td>
+            <td class="num">20 <small>(figure дээр 11)</small></td>
+          </tr>
+          <tr>
+            <th scope="row">Бүх хуудасны class тоо</th>
+            <td class="num win">225</td>
+            <td class="num">554</td>
+          </tr>
+          <tr>
+            <th scope="row">Lighthouse — mobile<br><small>Performance / Accessibility / Best Practices / SEO</small></th>
+            <td class="num">71 / 100 / 100 / 100<br><small>FCP 3.4 s, LCP 5.3 s</small></td>
+            <td class="num win">76 / 100 / 100 / 100<br><small>FCP 3.2 s, LCP 4.8 s</small></td>
+          </tr>
+          <tr>
+            <th scope="row">Lighthouse — desktop</th>
+            <td class="num win">100 / 100 / 100 / 100</td>
+            <td class="num">99 / 100 / 100 / 100</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">
+      Хэмжилт: Lighthouse 13.6, Chromium headless, localhost сервер, тус бүр 5 удаа ажиллуулж медиан утгыг авсан.
+      Mobile performance оноо ажиллуулах бүрт 70–94 хооронд хэлбэлзсэн. Зураг, видео, OpenStreetMap iframe
+      хоёр хуудсанд ижил тул тооцоонд оруулаагүй. Файлын хэмжээг <code>wc -c</code>, <code>gzip -9</code>-ээр хэмжсэн.
+    </p>
+
+    <h2>Дүгнэлт</h2>
+    <p class="conclusion">
+      Хоёр хувилбар ижил хуудас гаргасан ч арга нь өөр. Bootstrap нь navbar, card, form validation, collapse
+      зэрэг бэлэн компоненттой тул хурдан эхэлж, HTML-д цөөн class (нэг card-д 13) бичдэг боловч ашиглаагүй
+      хэсгийг нь ч гэсэн бүх framework-ийг (CSS + JS ≈ 309 KB, gzip ≈ 54 KB) CDN-ээс татдаг. Tailwind нь
+      build хийх алхам шаардаж, нэг card-д илүү олон utility class (20) бичдэг тул HTML урт болдог ч зөвхөн
+      ашигласан class-аа CSS-д гаргадаг тул CSS + JS нь ≈ 22 KB (gzip ≈ 5.5 KB) буюу ойролцоогоор 10 дахин бага.
+      Lighthouse-ын accessibility, best practices, SEO оноо хоёуланд нь 100 гарсан бөгөөд performance-ийн ялгаа бага
+      (mobile 71 ба 76, desktop 100 ба 99) байсан нь хоёр хуудасны ачааллыг ихэвчлэн зураг, видео, газрын зураг
+      тодорхойлж байгааг харуулж байна. Иймд бэлэн компонентоор хурдан прототип хийхэд Bootstrap, өөрийн загвартай,
+      хөнгөн хуудас хийхэд Tailwind илүү тохиромжтой гэж дүгнэлээ.
+    </p>
+
+    <p><a href="../lab04/index.html">← Нүүр хуудас руу буцах</a></p>
+  </main>
+</body>
+</html>

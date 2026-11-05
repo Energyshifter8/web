@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="mn" data-bs-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Лаб 8: Зургийн цомог — Bootstrap 5 хувилбар">
+  <title>Лаб 8: Зургийн цомог (Bootstrap)</title>
+  <link rel="icon" href="data:,">
+  <script>
+    // Хуудас зурагдахаас өмнө theme тохируулна (анивчихгүй)
+    (function () {
+      var saved = localStorage.getItem("theme");
+      var dark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.setAttribute("data-bs-theme", dark ? "dark" : "light");
+    })();
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <a class="visually-hidden-focusable position-absolute top-0 start-0 m-2 btn btn-brand" href="#main">Агуулга руу алгасах</a>
+
+  <!-- 1. Navbar -->
+  <nav class="navbar navbar-expand-md bg-dark sticky-top" data-bs-theme="dark" aria-label="Үндсэн цэс">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
+        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false">
+          <path d="M4 7h3l2-3h6l2 3h3a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <circle cx="12" cy="13" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        Зургийн цомог
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
+        aria-controls="main-nav" aria-expanded="false" aria-label="Цэс нээх">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="main-nav">
+        <ul class="navbar-nav ms-auto align-items-md-center gap-md-2">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Нүүр</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Галерей</a></li>
+          <li class="nav-item"><a class="nav-link" href="#video">Видео</a></li>
+          <li class="nav-item"><a class="nav-link" href="#map">Газрын зураг</a></li>
+          <li class="nav-item"><a class="nav-link" href="#send">Зураг илгээх</a></li>
+          <li class="nav-item my-2 my-md-0">
+            <button class="btn btn-outline-light btn-sm theme-toggle" type="button" aria-pressed="false">Харанхуй горим</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <header class="bg-body-tertiary border-bottom py-5 text-center">
+      <div class="container">
+        <svg class="mb-2" viewBox="0 0 200 100" width="200" height="100" role="img" aria-labelledby="hero-art-title">
+          <title id="hero-art-title">Уул, нар дүрсэлсэн зураг</title>
+          <circle cx="150" cy="32" r="14" fill="#F1C40F"/>
+          <polygon points="0,100 60,30 120,100" fill="var(--bs-secondary-color)"/>
+          <polygon points="60,100 130,40 200,100" fill="var(--brand)"/>
+        </svg>
+        <h1 class="display-5 fw-bold text-brand">Зургийн цомог</h1>
+        <p class="lead mx-auto mb-4" style="max-width: 600px;">
+          Байгалийн гэрэл зургууд. Өөрийн зургаа доорх формоор илгээгээрэй.
+        </p>
+        <a class="btn btn-brand btn-lg" href="#send">Зураг илгээх</a>
+      </div>
+    </header>
+
+    <!-- 2. 3 баганатай card grid -->
+    <section id="gallery" class="container py-5">
+      <h2 class="h3 section-title mb-4">Галерей</h2>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+
+        <div class="col">
+          <figure class="card h-100 shadow-sm photo-card">
+            <img src="../img/photo1.jpg" class="card-img-top" alt="Хадан цохионоос харагдах цэнхэр усан булан" width="800" height="600">
+            <figcaption class="card-body">
+              <h3 class="card-title h6 mb-1">Усан булан</h3>
+              <p class="card-text small text-body-secondary">Зураг: Alexey Topolyanskiy</p>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="col">
+          <figure class="card h-100 shadow-sm photo-card">
+            <img src="../img/photo2.jpg" class="card-img-top" alt="Ногоон уулсын дундуур мушгирсан зам" width="800" height="600" loading="lazy">
+            <figcaption class="card-body">
+              <h3 class="card-title h6 mb-1">Уулын зам</h3>
+              <p class="card-text small text-body-secondary">Зураг: Andrew Ridley</p>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="col">
+          <figure class="card h-100 shadow-sm photo-card">
+            <img src="../img/photo3.jpg" class="card-img-top" alt="Цастай уулсын бэлд байгаа майхнууд" width="800" height="600" loading="lazy">
+            <figcaption class="card-body">
+              <h3 class="card-title h6 mb-1">Цастай уул</h3>
+              <p class="card-text small text-body-secondary">Зураг: Wolfgang Lutz</p>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="col">
+          <figure class="card h-100 shadow-sm photo-card">
+            <img src="../img/photo4.jpg" class="card-img-top" alt="Ой дундах өндөр хүрхрээ" width="800" height="600" loading="lazy">
+            <figcaption class="card-body">
+              <h3 class="card-title h6 mb-1">Хүрхрээ</h3>
+              <p class="card-text small text-body-secondary">Зураг: Andrew Coelho</p>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="col">
+          <figure class="card h-100 shadow-sm photo-card">
+            <img src="../img/photo5.jpg" class="card-img-top" alt="Манантай ой дундуур урсах гол, чулуун дээр зогсож буй хүн" width="800" height="600" loading="lazy">
+            <figcaption class="card-body">
+              <h3 class="card-title h6 mb-1">Манантай гол</h3>
+              <p class="card-text small text-body-secondary">Зураг: Steve Carter</p>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="col">
+          <figure class="card h-100 shadow-sm photo-card">
+            <img src="../img/photo6.jpg" class="card-img-top" alt="Далайн эргийн хадан хясаа, долгион" width="800" height="600" loading="lazy">
+            <figcaption class="card-body">
+              <h3 class="card-title h6 mb-1">Далайн эрэг</h3>
+              <p class="card-text small text-body-secondary">Зураг: Joseph Barrientos</p>
+            </figcaption>
+          </figure>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="video" class="container pb-5">
+      <h2 class="h3 section-title mb-4">Видео</h2>
+      <div class="ratio ratio-16x9 rounded overflow-hidden bg-black" style="max-width: 960px;">
+        <video class="object-fit-cover" controls preload="metadata" playsinline poster="../img/photo1.jpg">
+          <source src="../video/clip.webm" type="video/webm">
+          <source src="../video/clip.mp4" type="video/mp4">
+          <track kind="subtitles" src="../video/clip.mn.vtt" srclang="mn" label="Монгол" default>
+          <p>Таны browser видео тоглуулж чадахгүй байна. <a href="../video/clip.mp4">Видеог татах</a></p>
+        </video>
+      </div>
+    </section>
+
+    <section id="map" class="container pb-5">
+      <h2 class="h3 section-title mb-4">Газрын зураг</h2>
+      <iframe class="w-100 border rounded" height="360"
+        title="Улаанбаатар хотын газрын зураг (OpenStreetMap)"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=106.86%2C47.89%2C106.98%2C47.95&amp;layer=mapnik"
+        loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin"></iframe>
+      <p class="mt-2">
+        <a class="link-brand" href="https://www.openstreetmap.org/#map=13/47.92/106.92" target="_blank" rel="noopener noreferrer">Том газрын зураг шинэ цонхонд нээх</a>
+      </p>
+    </section>
+
+    <!-- 3. Form validation -->
+    <section id="send" class="container pb-5">
+      <h2 class="h3 section-title mb-4">Зураг илгээх</h2>
+      <div class="card shadow-sm">
+        <div class="card-body p-4">
+          <form class="row g-3 needs-validation" novalidate>
+            <div class="col-md-6">
+              <label for="name" class="form-label">Нэр</label>
+              <input type="text" class="form-control" id="name" name="name" required minlength="2" autocomplete="name">
+              <div class="invalid-feedback">Нэрээ оруулна уу (2-оос дээш үсэг).</div>
+            </div>
+            <div class="col-md-6">
+              <label for="email" class="form-label">И-мэйл</label>
+              <input type="email" class="form-control" id="email" name="email" required autocomplete="email">
+              <div class="invalid-feedback">Зөв и-мэйл хаяг оруулна уу.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="title" class="form-label">Зургийн нэр</label>
+              <input type="text" class="form-control" id="title" name="title" required>
+              <div class="invalid-feedback">Зургийн нэрийг оруулна уу.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="category" class="form-label">Ангилал</label>
+              <select class="form-select" id="category" name="category" required>
+                <option value="" selected disabled>Сонгоно уу...</option>
+                <option>Уул</option>
+                <option>Ус, гол</option>
+                <option>Ой</option>
+                <option>Далай</option>
+              </select>
+              <div class="invalid-feedback">Ангилал сонгоно уу.</div>
+            </div>
+            <div class="col-12">
+              <label for="photo" class="form-label">Зураг (JPG, PNG)</label>
+              <input type="file" class="form-control" id="photo" name="photo" accept="image/jpeg,image/png" required>
+              <div class="invalid-feedback">Зургийн файл сонгоно уу.</div>
+            </div>
+            <div class="col-12">
+              <label for="message" class="form-label">Тайлбар</label>
+              <textarea class="form-control" id="message" name="message" rows="3" maxlength="300"></textarea>
+              <div class="form-text">300 хүртэл тэмдэгт.</div>
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="agree" required>
+                <label class="form-check-label" for="agree">Зургийг сайтад нийтлэхийг зөвшөөрч байна</label>
+                <div class="invalid-feedback">Зөвшөөрөх шаардлагатай.</div>
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-brand" type="submit">Илгээх</button>
+            </div>
+            <div class="col-12">
+              <div class="alert alert-success d-none mb-0 form-success" role="status">Баярлалаа! Таны зураг амжилттай илгээгдлээ.</div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-dark text-white text-center py-4" data-bs-theme="dark">
+    <p class="mb-1 small">&copy; 2026 Болд Тэмүүлэн</p>
+    <p class="mb-0 small">Зургууд: <a class="link-light" href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
+  </footer>
+
+</body>
+</html>

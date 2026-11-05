@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+/* Class хайх файлууд */
+@source "../index.html";
+@source "../script.js";
+
+/* Dark mode: <html data-theme="dark"> үед dark: variant ажиллана */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* Брэнд өнгө, palette: bg-brand, text-brand, border-brand ... үүснэ */
+@theme {
+  --color-brand: #1E8449;
+  --color-brand-hover: #145A32;
+  --color-brand-light: #2ECC71;
+  --color-brand-light-hover: #58D68D;
+  --color-on-brand-dark: #0B2215;
+
+  --color-ink: #2C3E50;
+  --color-ink-dark: #0B1118;
+  --color-page: #F4F6F8;
+  --color-page-dark: #121A22;
+  --color-surface-dark: #1C2833;
+  --color-sun: #F1C40F;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  html[data-theme="dark"] {
+    color-scheme: dark;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
