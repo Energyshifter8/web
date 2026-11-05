@@ -103,6 +103,10 @@ form.addEventListener("submit", function (event) {
   });
 
   form.reset();
+  // reset() нь type-ийг сэргээдэггүй тул нууц үгийг дахин нууна
+  passwordInput.type = "password";
+  passwordToggle.textContent = "Харуулах";
+  passwordToggle.setAttribute("aria-pressed", "false");
   Object.keys(validators).forEach(function (id) {
     clearField(document.querySelector("#" + id));
   });
