@@ -294,7 +294,6 @@ iframe {
 
 .flip-card {
   perspective: 1000px;
-  cursor: pointer;
   border-radius: var(--radius);
 }
 
@@ -304,7 +303,8 @@ iframe {
   transition: transform 0.6s ease;
 }
 
-.flip-card.is-flipped .flip-inner {
+.flip-card:hover .flip-inner,
+.flip-card:focus-visible .flip-inner {
   transform: rotateY(180deg);
 }
 

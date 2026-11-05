@@ -1,6 +1,5 @@
 const root = document.documentElement;
 const themeButton = document.querySelector(".theme-button");
-const flipCards = document.querySelectorAll(".flip-card");
 
 function setTheme(theme) {
   root.dataset.theme = theme;
@@ -25,24 +24,4 @@ themeButton.addEventListener("click", function () {
   }
   setTheme(newTheme);
   localStorage.setItem("theme", newTheme);
-});
-
-// Карт дээр дарахад эргэнэ
-function flipCard(card) {
-  const isFlipped = card.classList.toggle("is-flipped");
-  card.setAttribute("aria-pressed", isFlipped);
-}
-
-flipCards.forEach(function (card) {
-  card.addEventListener("click", function () {
-    flipCard(card);
-  });
-
-  // Гарнаас Enter эсвэл Space дарахад эргэнэ
-  card.addEventListener("keydown", function (event) {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      flipCard(card);
-    }
-  });
 });
