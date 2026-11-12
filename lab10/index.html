@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="mn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лаборатори 10: Функц, массив, объект, class</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js" defer></script>
+  <script src="js/data.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/photoTools.js" defer></script>
+  <script src="js/objectTools.js" defer></script>
+  <script src="js/album.js" defer></script>
+  <script src="js/validators.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Агуулга руу алгасах</a>
+
+  <header class="site-header">
+    <a class="logo" href="index.html">
+      <svg class="logo-icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false">
+        <path d="M4 7h3l2-3h6l2 3h3a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="12" cy="13" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      Зургийн цомог
+    </a>
+    <input class="menu-toggle" type="checkbox" id="menu-toggle">
+    <label class="menu-button" for="menu-toggle">&#9776; Цэс</label>
+    <nav class="site-nav" aria-label="Үндсэн цэс">
+      <ul class="nav-list">
+        <li><a class="nav-link" href="../lab04/index.html">Нүүр</a></li>
+        <li><a class="nav-link" href="#gallery">Галерей</a></li>
+        <li><a class="nav-link" href="#add">Зураг нэмэх</a></li>
+        <li><a class="nav-link" href="test.html">Тест</a></li>
+        <li><button class="theme-button" type="button" aria-pressed="false">Харанхуй горим</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <section class="hero">
+      <svg class="hero-art" viewBox="0 0 200 100" role="img" aria-labelledby="hero-art-title">
+        <title id="hero-art-title">Уул, нар дүрсэлсэн зураг</title>
+        <circle class="hero-sun" cx="150" cy="32" r="14"/>
+        <polygon class="hero-mountain-back" points="0,100 60,30 120,100"/>
+        <polygon class="hero-mountain" points="60,100 130,40 200,100"/>
+      </svg>
+      <h1 class="hero-title">Зургийн цомог</h1>
+      <p class="hero-text">
+        Картуудыг JavaScript <code>class Album</code>-ийн өгөгдлөөс үүсгэсэн.
+        Хамгийн их like-тай 3 зураг автоматаар «онцлох» болно.
+      </p>
+    </section>
+
+    <section id="gallery" class="section">
+      <h2 class="section-title">Галерей</h2>
+
+      <form id="filters" class="filters" role="search" aria-label="Зураг шүүх">
+        <div class="filter-field">
+          <label class="field-label" for="filter-search">Нэрээр хайх</label>
+          <input class="field-input" type="search" id="filter-search" name="search" placeholder="жишээ: уул">
+        </div>
+        <div class="filter-field">
+          <label class="field-label" for="filter-place">Газар</label>
+          <select class="field-input" id="filter-place" name="place">
+            <option value="all">Бүх газар</option>
+          </select>
+        </div>
+        <div class="filter-field">
+          <label class="field-label" for="filter-sort">Эрэмбэ</label>
+          <select class="field-input" id="filter-sort" name="sort">
+            <option value="likes-desc">Like: ихээс бага</option>
+            <option value="likes-asc">Like: багаас их</option>
+            <option value="date-desc">Огноо: шинэ нь эхэнд</option>
+            <option value="date-asc">Огноо: хуучин нь эхэнд</option>
+            <option value="featured">Зөвхөн онцлох</option>
+          </select>
+        </div>
+      </form>
+
+      <p class="stats" id="stats" role="status"></p>
+      <p class="stats groups" id="groups"></p>
+
+      <ul class="gallery" id="gallery-list"></ul>
+
+      <p><button class="reset-button" type="button" id="reset-album">Анхны цомог руу буцаах</button></p>
+    </section>
+
+    <section id="add" class="section">
+      <h2 class="section-title">Зураг нэмэх</h2>
+      <p>Талбаруудыг лаб 9-ийн <code>validateName</code> ба шинэ <code>validateDate</code>-аар шалгаад
+        <code>album.add()</code>-аар нэмнэ. Шинэ зурагт id автоматаар, <code>likes = 0</code>, <code>tags = []</code> өгөгдөнө.</p>
+
+      <form id="add-form" class="feedback-form" action="#" method="post" novalidate>
+        <div class="field">
+          <label class="field-label" for="photo-title">Нэр</label>
+          <input class="field-input" type="text" id="photo-title" name="title" autocomplete="off"
+            aria-describedby="photo-title-hint photo-title-error">
+          <p class="field-hint" id="photo-title-hint">2–50 тэмдэгт, тоо оруулахгүй.</p>
+          <p class="field-error" id="photo-title-error" aria-live="polite"></p>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="photo-place">Газар</label>
+          <input class="field-input" type="text" id="photo-place" name="place" list="place-options" autocomplete="off"
+            aria-describedby="photo-place-hint photo-place-error">
+          <datalist id="place-options"></datalist>
+          <p class="field-hint" id="photo-place-hint">Байгаа газраас сонгох эсвэл шинээр бичнэ.</p>
+          <p class="field-error" id="photo-place-error" aria-live="polite"></p>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="photo-date">Огноо</label>
+          <input class="field-input" type="date" id="photo-date" name="date"
+            aria-describedby="photo-date-hint photo-date-error">
+          <p class="field-hint" id="photo-date-hint">Ирээдүйн огноо сонгохгүй.</p>
+          <p class="field-error" id="photo-date-error" aria-live="polite"></p>
+        </div>
+
+        <button class="submit-button" type="submit">Нэмэх</button>
+        <p class="form-status" id="add-status" role="status"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <p class="back-link"><a href="../lab04/index.html">← Нүүр хуудас руу буцах</a></p>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Болд Тэмүүлэн</p>
+    <p>Зургууд: <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
+  </footer>
+
+</body>
+</html>
